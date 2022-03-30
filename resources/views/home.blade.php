@@ -66,52 +66,34 @@
 
     <div class="container-fluid marketing">
 
+        
         <hr class="featurette-divider">
+        <h3 align="center">Berita Sekolah</h3>
 
-        <div class="row featurette">
-            <div class="col-md-7">
-                <h2 class="featurette-heading">Pemberian Materi oleh Staf Pengajar <br><span class="text-muted">(Dr.
-                        Effendi Nawawi, M.Si)</span></h2>
-                <p class="lead">Pemberian Materi Pembelajaran Abad 21 di SDN Karang Kemiri Kabupaten OKU Timur Tahun 2021</p>
-            </div>
-            <div class="col-md-5">
-                <img src="img/seminar.jpg"
-                    class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
-                    height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
-                    preserveAspectRatio="xMidYMid slice" focusable="false">
+        <div class="row row-cols-1 row-cols-md-3 g-4 mt-4">
+            @foreach ($blog as $item)
+            <div class="col">
+                <div class="card h-100">
+                <img src="{{ asset('storage/'.$item->foto) }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ $item->judul }}</h5>
+                    <p class="card-text">
+                        {{ Str::limit($item->keterangan, 200) }} 
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">{{ $item->created_at->diffForHumans() }}</small>
+                </div>
             </div>
         </div>
-
-        <hr class="featurette-divider">
-
-        <div class="row featurette">
-            <div class="col-md-7 order-md-2">
-                <h2 class="featurette-heading">Peserta Kegiatan Program PKB</h2>
-                <p class="lead">Peserta Program PKB di Kecamatan Madang Suku I, Mendapatkan Pelatihan dan Pengarahan dari Staff Pengajar Mengenai Pembelajaran Abad 21</p>
+        @endforeach
+            
             </div>
-            <div class="col-md-5 order-md-1">
-                <img src="img/seminar2.jpg"
-                    class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
-                    height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
-                    preserveAspectRatio="xMidYMid slice" focusable="false">
-
-            </div>
-        </div>
-
-        <hr class="featurette-divider">
-
-        <div class="row featurette">
-            <div class="col-md-7">
-                <h2 class="featurette-heading">Kegiatan Diklat Program PKB</h2>
-                <p class="lead">Peserta Diklat di Kecamatan, Kabupaten OKU Timur Mendapatkan Pelatihan dan Pengarahan Tentang RPP HOTS</p>
-            </div>
-            <div class="col-md-5">
-                <img src="img/seminar4.jpg"
-                    class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
-                    height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
-                    preserveAspectRatio="xMidYMid slice" focusable="false">
-            </div>
-        </div>
+          </div>
+          
+          <div class="load-more mt-5" align="center">
+              <a href="{{ route('blog') }}" class="btn btn-primary" style="text-decoration: none">Load More</a>
+          </div>
 
         <hr class="featurette-divider">
 

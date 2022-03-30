@@ -14,6 +14,14 @@ class DashboardController extends Controller
         ]);
     }
 
+    public function blog(){
+
+        $blog = Blog::all();
+        $title = 'Blog';
+
+        return view('blog', ['blog' => $blog, 'title' => $title]);
+    }
+
     public function create(){
         return view('tambah-blog', [
             "title" => "Tambah Blog"
