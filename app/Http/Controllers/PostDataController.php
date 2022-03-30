@@ -81,6 +81,7 @@ class PostDataController extends Controller
             Alert::success('Success', 'Data Berhasil Diinput');
             $postData = new PostData();
 
+            $postData -> pelatihan_id = $request -> pelatihan_id;
             $postData -> nama = $request -> nama;
             $postData -> nip = $request -> nip;
             $postData -> telp = $request -> telp;

@@ -15,6 +15,7 @@ class CreatePostDataTable extends Migration
     {
         Schema::create('post_data', function (Blueprint $table) {
             $table->id();
+            $table->integer('pelatihan_id');
             $table->string('nama');
             $table->char('nip', 20)->nullable();
             $table->char('telp', 15);

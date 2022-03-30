@@ -16,9 +16,11 @@ class DashboardPostController extends Controller
      */
     public function index()
     {
+        $postsData = PostData::join('pelatihans', 'post_data.pelatihan_id', '=', 'pelatihans.id')->get();
+
         return view('data', [
             'title' => 'Data Pendaftaran Peserta',
-            'postsData' => PostData::all()
+            'postsData' => $postsData
         ]);
     }
 

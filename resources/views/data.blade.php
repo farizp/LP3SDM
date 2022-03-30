@@ -84,7 +84,7 @@
               <td>{{ $postData -> pkb }}</td>
               <td>{{ $postData -> nip_pkb }}</td>
               <td>{{ $postData -> pendidikan }}</td>
-              <td> Pelatihan</td>
+              <td>{{ $postData -> nama_pelatihan }}</td>
               <td>
                 {{-- <a href="/edit" class="badge bg-warning"><span data-feather="edit"></span></a> --}}
                 <a href="{{ url('/delete/peserta', $postData->id) }}" class="badge bg-danger border-0" onclick="return confirm('Apakah Data Ingin Di Hapus?')"><span data-feather="x-circle"></span></a>

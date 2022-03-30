@@ -18,7 +18,7 @@
         </div>
         <br>
         <div class="table-responsive">
-            <table class="table table-bordered table-striped table-sm" width="100%" cellspacing="0" id="data-peserta">
+            <table class="table table-striped table-sm" width="100%" cellspacing="0" id="dataJadwal">
                 <thead>
                     <tr>
                         <th scope="col">No</th>
@@ -52,3 +52,12 @@
         </div>
     </main>
 @endsection
+
+@push('script')
+    <script>
+        $(document).ready(function () {
+            $('#dataJadwal').DataTable();
+        });
+    </script>
+    
+@endpush

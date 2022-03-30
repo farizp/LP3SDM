@@ -19,12 +19,12 @@
                         @csrf
 
                         {{-- @method('PUT') --}}
-{{-- 
+
                         <div class="form-floating mb-3">
-                            <select class="form-select" id="floatingSelect" name="pelatihan">
+                            <select class="form-select" id="floatingSelect" name="pelatihan_id">
                                 <option selected>Pilih Nama Pelatihan</option>
                                 @foreach ($pelatihan as $post)
-                                    <option value="{{ $post->nama_pelatihan }}" name="pelatihan">{{ $post->nama_pelatihan }}</option>
+                                    <option value="{{ $post->id }}" name="pelatihan">{{ $post->nama_pelatihan }}</option>
                                 @endforeach
                             </select>
                             <label for="floatingSelect">Nama Pelatihan</label>
@@ -33,7 +33,7 @@
                                     {{ $message }}
                                 </div>
                             @enderror
-                        </div> --}}
+                        </div>
 
 
                         <div class="form-floating">
