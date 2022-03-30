@@ -13,6 +13,6 @@ class Sertifikat extends Model
         'nama_pelatihan',
         'name',
         'nip',
-        'foto-sertifikat'    
+        'foto_sertifikat'    
     ];
 }

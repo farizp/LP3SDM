@@ -78,9 +78,19 @@ class SertifikatController extends Controller
      * @param  \App\Models\Sertifikat  $sertifikat
      * @return \Illuminate\Http\Response
      */
-    public function edit(Sertifikat $sertifikat)
+    public function edit($id)
     {
-        //
+        $sertifikat = Sertifikat::findOrFail($id);
+        $pelatihan = Pelatihan::all();
+        $postData = PostData::all();
+
+        return view('edit-sertifikat', [
+            'title' => 'Edit Sertifikat',
+            'sertifikat' => $sertifikat,
+            'pelatihan' => $pelatihan,
+            'postData' => $postData
+        ]);
+     
     }
 
     /**
@@ -90,9 +100,18 @@ class SertifikatController extends Controller
      * @param  \App\Models\Sertifikat  $sertifikat
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Sertifikat $sertifikat)
+    public function update(Request $request, $id)
     {
-        //
+        $sertifikat = Sertifikat::findOrFail($id);
+
+        $sertifikat->update([
+            'nama_pelatihan' => request('nama_pelatihan'),
+            'name' => request('name'),
+            'nip' => request('nip'),
+            'foto_sertifikat' => request('foto_sertifikat')->store('images')
+        ]);
+
+        return redirect()->route('data-sertifikat')->with('success', 'Sertifikat Telah Diupdate');
     }
 
     /**
@@ -101,8 +120,11 @@ class SertifikatController extends Controller
      * @param  \App\Models\Sertifikat  $sertifikat
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Sertifikat $sertifikat)
+    public function destroy($id)
     {
-        //
+        $sertifikat = Sertifikat::findOrFail($id);
+        $sertifikat->delete();
+
+        return redirect()->route('data-sertifikat')->with('success', 'Sertifikat Telah Dihapus');
     }
 }

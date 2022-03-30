@@ -69,7 +69,7 @@ Route::get('/data-sertifikat/tambah', [SertifikatController::class, 'create'])->
 Route::post('/data-sertifikat/tambah', [SertifikatController::class, 'store'])->name('post-sertifikat');
 Route::get('/data-sertifikat/ubah/{id}', [SertifikatController::class, 'edit'])->middleware('auth')->name('edit-sertifikat');
 Route::patch('/data-sertifikat/ubah{id}', [SertifikatController::class, 'update'])->middleware('auth')->name('update-sertifikat');
-Route::delete('/data-sertifikat/hapus/{id}', [SertifikatController::class, 'destroy'])->middleware('auth')->name('delete-sertifikat');
+Route::get('/data-sertifikat/hapus/{id}', [SertifikatController::class, 'destroy'])->middleware('auth')->name('delete-sertifikat');
 
 
 Route::get('/jadwal', [PelatihanController::class, 'index'])->middleware('auth')->name('jadwal');
