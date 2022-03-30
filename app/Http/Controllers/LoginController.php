@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
+use App\Models\Sertifikat;
 
 class LoginController extends Controller
 {
@@ -40,12 +42,17 @@ class LoginController extends Controller
 
     public function profile($id){
 
-        $user = Auth::user($id);
+        $user = User::findOrFail($id);
+        $sertifikat = Sertifikat::join('pelatihans', 'sertifikats.pelatihan_id', '=', 'pelatihans.id')
+                            ->join('post_data', 'sertifikats.peserta_id', '=', 'post_data.id')
+                            ->get();
+        
         $title = $user->name;
 
         return view('profile', [
             'user' => $user, 
-            'title' => $title
+            'title' => $title,
+            'sertifikat' => $sertifikat
         ]);
 
     }
