@@ -16,7 +16,10 @@ class SertifikatController extends Controller
      */
     public function index()
     {
-        $sertifikat = Sertifikat::all();
+        $sertifikat = Sertifikat::
+            join('pelatihans', 'sertifikats.pelatihan_id', '=', 'pelatihans.id')
+            ->join('post_data', 'sertifikats.peserta_id', '=', 'post_data.id')
+            ->get();
 
         return view('/data-sertifikat', [
             'title' => 'Data Sertifikat',
@@ -51,10 +54,9 @@ class SertifikatController extends Controller
      */
     public function store(Request $request)
     {
-        Sertifikat::create([
-            'nama_pelatihan' => request('nama_pelatihan'),
-            'name' => request('name'),
-            'nip' => request('nip'),
+       Sertifikat::create([
+            'pelatihan_id' => request('pelatihan_id'),
+            'peserta_id' => request('peserta_id'),
             'foto_sertifikat' => request('foto_sertifikat')->store('images')
             ]);
 
@@ -105,9 +107,8 @@ class SertifikatController extends Controller
         $sertifikat = Sertifikat::findOrFail($id);
 
         $sertifikat->update([
-            'nama_pelatihan' => request('nama_pelatihan'),
-            'name' => request('name'),
-            'nip' => request('nip'),
+            'pelatihan_id' => request('pelatihan_id'),
+            'peserta_id' => request('peserta_id'),
             'foto_sertifikat' => request('foto_sertifikat')->store('images')
         ]);
 

@@ -13,26 +13,26 @@
                     @csrf
 
                     <div class="form-floating">
-                        <select class="form-select" id="floatingSelect" name="nama_pelatihan">
+                        <select class="form-select" id="floatingSelect" name="pelatihan_id">
                             <option selected>Pilih Nama Pelatihan</option>
                             @foreach ($pelatihan as $post)
-                                <option value="{{ $post->nama_pelatihan }}">{{ $post->nama_pelatihan }}</option>
+                                <option value="{{ $post->id }}">{{ $post->nama_pelatihan }}</option>
                             @endforeach
                         </select>
                         <label for="floatingSelect">Nama Pelatihan</label>
                     </div>
 
                     <div class="form-floating">
-                        <select class="form-select" id="floatingSelect" name="name">
+                        <select class="form-select" id="floatingSelect" name="peserta_id">
                             <option selected>Pilih Nama Peserta</option>
                             @foreach ($postData as $post)
-                                <option value="{{ $post->nama }}">{{ $post->nama }}</option>
+                                <option value="{{ $post->id }}">{{ $post->nama }}</option>
                             @endforeach
                         </select>
                         <label for="floatingSelect">Nama Peserta</label>
                     </div>
 
-                    <div class="form-floating">
+                    {{-- <div class="form-floating">
                         <select class="form-select" id="floatingSelect" name="nip">
                             <option selected>Pilih NIP Peserta</option>
                             @foreach ($postData as $post)
@@ -40,7 +40,7 @@
                             @endforeach
                         </select>
                         <label for="floatingSelect">NIP</label>
-                    </div>
+                    </div> --}}
                     <br>
                     <div class="form-group">
                         <label for="">Foto Sertifikat</label>

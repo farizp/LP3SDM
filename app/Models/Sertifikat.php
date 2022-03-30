@@ -10,9 +10,8 @@ class Sertifikat extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nama_pelatihan',
-        'name',
-        'nip',
-        'foto_sertifikat'    
+        'pelatihan_id',
+        'peserta_id',
+        'foto_sertifikat' 
     ];
 }

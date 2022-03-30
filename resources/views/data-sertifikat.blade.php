@@ -44,7 +44,7 @@
                         <tr>
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $post->nama_pelatihan }}</td>
-                            <td>{{ $post->name }}</td>
+                            <td>{{ $post->nama }}</td>
                             <td>{{ $post->nip }}</td>
                             <td>
                                 <img src="{{ asset('storage/'.$post->foto_sertifikat) }}" alt="" height="128">

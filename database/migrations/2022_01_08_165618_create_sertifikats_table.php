@@ -15,9 +15,8 @@ class CreateSertifikatsTable extends Migration
     {
         Schema::create('sertifikats', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_pelatihan');
-            $table->string('name');
-            $table->char('nip');
+            $table->integer('pelatihan_id');
+            $table->integer('peserta_id');
             $table->string('foto_sertifikat');
             $table->timestamps();
         });
