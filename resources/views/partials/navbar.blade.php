@@ -30,6 +30,9 @@
                     <li><hr class="dropdown-divider"></li>
                   @endif
                   <li>
+                      <a href="{{ route('profile', auth()->user()->id) }}" class="nav-link text-dark"> &nbsp; <i class="bi bi-person"></i> Profile</a>
+                  </li>
+                  <li>
                     <form action="/" method="post">
                       @csrf
                       <button type="submit" class="dropdown-item"><i class="bi bi-box-arrow-right"></i> Keluar</button>

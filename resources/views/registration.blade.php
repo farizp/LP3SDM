@@ -19,6 +19,22 @@
                         @csrf
 
                         {{-- @method('PUT') --}}
+{{-- 
+                        <div class="form-floating mb-3">
+                            <select class="form-select" id="floatingSelect" name="pelatihan">
+                                <option selected>Pilih Nama Pelatihan</option>
+                                @foreach ($pelatihan as $post)
+                                    <option value="{{ $post->nama_pelatihan }}" name="pelatihan">{{ $post->nama_pelatihan }}</option>
+                                @endforeach
+                            </select>
+                            <label for="floatingSelect">Nama Pelatihan</label>
+                            @error('floatingSelect')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div> --}}
+
 
                         <div class="form-floating">
                             <input type="text" class="form-control rounded-top @error('name') is-invalid @enderror"

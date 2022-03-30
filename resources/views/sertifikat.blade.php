@@ -9,11 +9,11 @@
                 <div class="text-center">
                     <i class="bi bi-person-plus" style="font-size:150px"></i>
                 </div>
-                <form action="{{ route('post-sertifikat') }}" method="post">
+                <form action="{{ route('post-sertifikat') }}" method="post" enctype="multipart/form-data">
                     @csrf
 
                     <div class="form-floating">
-                        <select class="form-select" id="floatingSelect">
+                        <select class="form-select" id="floatingSelect" name="nama_pelatihan">
                             <option selected>Pilih Nama Pelatihan</option>
                             @foreach ($pelatihan as $post)
                                 <option value="{{ $post->nama_pelatihan }}">{{ $post->nama_pelatihan }}</option>
@@ -23,7 +23,7 @@
                     </div>
 
                     <div class="form-floating">
-                        <select class="form-select" id="floatingSelect">
+                        <select class="form-select" id="floatingSelect" name="name">
                             <option selected>Pilih Nama Peserta</option>
                             @foreach ($postData as $post)
                                 <option value="{{ $post->nama }}">{{ $post->nama }}</option>
@@ -33,7 +33,7 @@
                     </div>
 
                     <div class="form-floating">
-                        <select class="form-select" id="floatingSelect">
+                        <select class="form-select" id="floatingSelect" name="nip">
                             <option selected>Pilih NIP Peserta</option>
                             @foreach ($postData as $post)
                                 <option value="{{ $post->nip }}">{{ $post->nip }}</option>

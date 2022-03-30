@@ -9,6 +9,7 @@ use App\Http\Requests\UpdatePostDataRequest;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Illuminate\Support\Facades\Validator;
+use App\Models\Pelatihan;
 
 class PostDataController extends Controller
 {
@@ -28,8 +29,12 @@ class PostDataController extends Controller
     }
 
     public function registration(){
+
+        $pelatihan = Pelatihan::all();
+
         return view('registration', [
-            "title" => "Pendaftaran"
+            "title" => "Pendaftaran",
+            'pelatihan' => $pelatihan
         ]);
     }
 

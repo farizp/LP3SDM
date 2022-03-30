@@ -18,7 +18,7 @@ class CreateSertifikatsTable extends Migration
             $table->string('nama_pelatihan');
             $table->string('name');
             $table->char('nip');
-            $table->string('foto-sertifikat');
+            $table->string('foto_sertifikat');
             $table->timestamps();
         });
     }

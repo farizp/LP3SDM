@@ -37,4 +37,16 @@ class LoginController extends Controller
 
         return redirect('/');
     }
+
+    public function profile($id){
+
+        $user = Auth::user($id);
+        $title = $user->name;
+
+        return view('profile', [
+            'user' => $user, 
+            'title' => $title
+        ]);
+
+    }
 }

@@ -16,8 +16,11 @@ class SertifikatController extends Controller
      */
     public function index()
     {
+        $sertifikat = Sertifikat::all();
+
         return view('/data-sertifikat', [
-            'title' => 'Data Sertifikat'
+            'title' => 'Data Sertifikat',
+            'sertifikat' => $sertifikat
         ]);
     }
 
@@ -49,7 +52,7 @@ class SertifikatController extends Controller
     public function store(Request $request)
     {
         Sertifikat::create([
-            'nama_pelatihan' => request('title'),
+            'nama_pelatihan' => request('nama_pelatihan'),
             'name' => request('name'),
             'nip' => request('nip'),
             'foto_sertifikat' => request('foto_sertifikat')->store('images')

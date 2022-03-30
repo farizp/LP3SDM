@@ -1,6 +1,7 @@
-@extends('layout/main-dashboard')
+@extends('layout.main-dashboard')
 
 @section('container')
+
     <div class="row justify-content-center">
         <div class="col-lg-5 mt-5 mb-5">
             <main class="form-register">

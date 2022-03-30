@@ -40,7 +40,9 @@
                           <td>{{ $loop->iteration }}</td>
                           <td>{{ $post->judul }}</td>
                           <td>{{ $post->keterangan }}</td>
-                          <td><img src="{{ asset('storage/images/'.$post->foto) }}" height="128" alt=""></td>
+                          <td>
+                              <img src="{{ asset('storage/'.$post->foto) }}" width="128px" alt="" srcset="">
+                          </td>
                           <td>
                               <a href="{{ route('edit-blog', $post->id) }}" class="badge bg-warning"><span
                                       data-feather="edit"></span></a>

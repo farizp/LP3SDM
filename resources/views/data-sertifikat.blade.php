@@ -30,21 +30,23 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {{-- @foreach ($user as $users)
+                    @foreach ($sertifikat as $post)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
-                            <td>{{ $users->name }}</td>
-                            <td>{{ $users->nip }}</td>
-                            <td>{{ $users->level }}</td>
-                            <td>{{ $users->email }}</td>
+                            <td>{{ $post->nama_pelatihan }}</td>
+                            <td>{{ $post->name }}</td>
+                            <td>{{ $post->nip }}</td>
                             <td>
-                                <a href="{{ route('edit-datapeserta', $users->id) }}" class="badge bg-warning"><span
-                                        data-feather="edit"></span></a>
-                                <a href="{{ route('delete-datapeserta', $users->id) }}" class="badge bg-danger" onclick="return confirm('Apakah Data Ingin Di Hapus?')"><span
-                                        data-feather="x-circle"></span></a>
+                                <img src="{{ asset('storage/'.$post->foto_sertifikat) }}" alt="" height="128">
+                            </td>
+                            <td>
+                                <a href="{{ route('edit-sertifikat', $post->id) }}" class="btn btn-warning"><span
+                                        class="" data-feather="edit" style="margin-bottom : 2px"></span> Edit</a>
+                                <a href="{{ route('delete-sertifikat', $post->id) }}" class="btn btn-danger"><span
+                                        class="" data-feather="trash" style="margin-bottom : 2px"></span> Hapus</a>
                             </td>
                         </tr>
-                    @endforeach --}}
+                    @endforeach
                 </tbody>
             </table>
         </div>

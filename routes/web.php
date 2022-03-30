@@ -7,6 +7,7 @@ use App\Http\Controllers\PelatihanController;
 use App\Http\Controllers\PostDataController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SertifikatController;
+use App\Http\Controllers\HomeController;
 use App\Models\Pelatihan;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
@@ -22,11 +23,13 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 |
 */
 
-Route::get('/', function () {
-    return view('home', [
-        'title' => 'Beranda',
-    ]);
-});
+// Route::get('/', function () {
+//     return view('home', [
+//         'title' => 'Beranda',
+//     ]);
+// });
+
+Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/about', function () {
     return view('about', [
@@ -40,6 +43,7 @@ Route::post('/registration', [PostDataController::class, 'store']) -> name('regi
 Route::get('/login', [LoginController::class, 'login'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/', [LoginController::class, 'logout']);
+Route::get('/profile/{id}', [LoginController::class, 'profile'])->name('profile');
 
 Route::get('/register', [RegisterController::class, 'register'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
@@ -63,6 +67,9 @@ Route::post('/data-peserta/tambah', [DashboardPostController::class, 'store'])->
 Route::get('/data-sertifikat', [SertifikatController::class, 'index'])->name('data-sertifikat');
 Route::get('/data-sertifikat/tambah', [SertifikatController::class, 'create'])->name('tambah-sertifikat');
 Route::post('/data-sertifikat/tambah', [SertifikatController::class, 'store'])->name('post-sertifikat');
+Route::get('/data-sertifikat/ubah/{id}', [SertifikatController::class, 'edit'])->middleware('auth')->name('edit-sertifikat');
+Route::patch('/data-sertifikat/ubah{id}', [SertifikatController::class, 'update'])->middleware('auth')->name('update-sertifikat');
+Route::delete('/data-sertifikat/hapus/{id}', [SertifikatController::class, 'destroy'])->middleware('auth')->name('delete-sertifikat');
 
 
 Route::get('/jadwal', [PelatihanController::class, 'index'])->middleware('auth')->name('jadwal');

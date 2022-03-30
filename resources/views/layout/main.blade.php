@@ -15,7 +15,7 @@
           @yield('container') <!-- diisi nama section-->
       </div>
       
-      <div class="footer container">
+      <div class="footer container fixed-bottom">
         <p class="float-end"><a href="#">Back to top</a></p>
         <p>&copy; 2021 Jynnn&middot; 
       </div>
