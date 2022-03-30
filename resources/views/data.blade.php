@@ -23,7 +23,7 @@
     @endif
 
     <div class="table-responsive">
-      <table class="table table-bordered table-striped table-sm">
+      <table class="table table-striped table-sm" width="100%" cellspacing="0" id="dataPeserta">
         <thead>
           <tr>
             <th scope="col">No</th>
@@ -44,6 +44,26 @@
             <th scope="col">Edit</th>
         </tr>
         </thead>
+        <tfoot>
+          <tr>
+            <th scope="col">No</th>
+            <th scope="col">Nama</th>
+            <th scope="col">NIP</th>
+            <th scope="col">No.Telp/HP/WA</th>
+            <th scope="col">Golongan</th>
+            <th scope="col">Nama Sekolah</th>
+            <th scope="col">Alamat Sekolah</th>
+            <th scope="col">Kelas Yang Diajar</th>
+            <th scope="col">Kurikulum Yang Dipakai</th>
+            <th scope="col">Mata Pelajaran Yang Diajar</th>
+            <th scope="col">Nama Kepala Sekolah</th>
+            <th scope="col">NIP Kepala Sekolah</th>
+            <th scope="col">Koordinator PKB</th>
+            <th scope="col">NIP Koordinator PKB</th>
+            <th scope="col">Kualifikasi Pendidikan</th>
+            <th scope="col">Edit</th>
+        </tr>
+        </tfoot>
         <tbody>
           @foreach ($postsData as $postData)
             <tr>
@@ -64,12 +84,12 @@
               <td>{{ $postData -> pendidikan }}</td>
               <td>
                 <a href="/edit" class="badge bg-warning"><span data-feather="edit"></span></a>
-
-                <form action="/data-peserta" method="POST" class="d-inline">
+                <a href="{{ url('/delete/peserta', $postData->id) }}" class="badge bg-danger border-0" onclick="return confirm('Apakah Data Ingin Di Hapus?')"><span data-feather="x-circle"></span></a>
+                {{-- <form action="/data-peserta" method="POST" class="d-inline">
                   @method('deleted')
                   @csrf
                   <button class="badge bg-danger border-0" onclick="return confirm('Apakah Data Ingin Di Hapus?')"><span data-feather="x-circle"></span></button>
-                </form>
+                </form> --}}
               </td>
             </tr>
             @endforeach
@@ -80,3 +100,11 @@
 </div>
 @endsection
    
+@push('script')
+  <script>
+    $(document).ready(function() {
+      $('#dataPeserta').DataTable();
+    });
+  </script>
+    
+@endpush

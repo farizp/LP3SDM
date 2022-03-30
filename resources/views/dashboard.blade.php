@@ -24,7 +24,7 @@
         </div>
         <br>
         <div class="table-responsive">
-            <table class="table table-bordered table-striped table-sm" width="100%" cellspacing="0" id="data-peserta">
+            <table class="table table-striped table-sm" width="100%" cellspacing="0" id="dataBlog">
                 <thead>
                     <tr>
                         <th scope="col">No</th>
@@ -34,6 +34,15 @@
                         <th scope="col">Edit</th>
                     </tr>
                 </thead>
+                <tfoot>
+                    <tr>
+                        <th scope="col">No</th>
+                        <th scope="col">Judul</th>
+                        <th scope="col">Keterangan</th>
+                        <th scope="col">Foto</th>
+                        <th scope="col">Edit</th>
+                    </tr>
+                </tfoot>
                 <tbody>
                     @foreach ($posts as $post)
                       <tr>
@@ -57,3 +66,12 @@
     </main>
 
 @endsection
+
+@push('script')
+    <script>
+        $(document).ready(function () {
+            $('#dataBlog').DataTable();
+        });
+    </script>
+    
+@endpush

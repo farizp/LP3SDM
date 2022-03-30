@@ -39,6 +39,7 @@ Route::get('/about', function () {
 
 Route::get('/registration', [PostDataController::class, 'registration']);
 Route::post('/registration', [PostDataController::class, 'store']) -> name('registration.store');
+Route::get('/delete/peserta/{id}', [PostDataController::class, 'destroy']) -> name('peserta.delete');
 
 Route::get('/login', [LoginController::class, 'login'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);

@@ -9,7 +9,9 @@ use App\Http\Requests\UpdatePostDataRequest;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Illuminate\Support\Facades\Validator;
+use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\Pelatihan;
+use Illuminate\Support\Facades\Redirect;
 
 class PostDataController extends Controller
 {
@@ -76,6 +78,7 @@ class PostDataController extends Controller
             dd($validatedData->errors());
             return back()->withErrors($validatedData->errors());
         } else {
+            Alert::success('Success', 'Data Berhasil Diinput');
             $postData = new PostData();
 
             $postData -> nama = $request -> nama;
@@ -143,8 +146,11 @@ class PostDataController extends Controller
      * @param  \App\Models\PostData  $postData
      * @return \Illuminate\Http\Response
      */
-    public function destroy(PostData $postData)
+    public function destroy($id)
     {
-        //
+        $post = PostData::findOrFail($id);
+        $post->delete();
+
+        return redirect::back()->with('success', 'Data Berhasil Dihapus');
     }
 }

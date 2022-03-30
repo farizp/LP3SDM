@@ -28,7 +28,7 @@
         </div>
         <br>
         <div class="table-responsive">
-            <table class="table table-bordered table-striped table-sm" width="100%" cellspacing="0" id="data-peserta">
+            <table class="table table-striped" width="100%" cellspacing="0" id="dataPeserta">
                 <thead>
                     <tr>
                         <th scope="col">No</th>
@@ -39,6 +39,16 @@
                         <th scope="col">Edit</th>
                     </tr>
                 </thead>
+                <tfoot>
+                    <tr>
+                        <th scope="col">No</th>
+                        <th scope="col">Nama</th>
+                        <th scope="col">NIP</th>
+                        <th scope="col">Level</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Edit</th>
+                    </tr>
+                </tfoot>
                 <tbody>
                     @foreach ($user as $users)
                         <tr>
@@ -60,11 +70,14 @@
         </div>
     </main>
     </div>
-    <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
-    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#data-pesertaz').DataTable();
-        });
-    </script>
+    
+   
 @endsection
+
+@push('script')
+<script>
+    $(document).ready(function() {
+        $('#dataPeserta').DataTable();
+    });
+</script>
+@endpush

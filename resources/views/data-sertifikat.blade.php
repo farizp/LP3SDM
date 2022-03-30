@@ -18,7 +18,7 @@
         </div>
         <br>
         <div class="table-responsive">
-            <table class="table table-bordered table-striped table-sm" width="100%" cellspacing="0" id="data-peserta">
+            <table class="table table-striped table-sm" width="100%" cellspacing="0" id="dataSertifikat">
                 <thead>
                     <tr>
                         <th scope="col">No</th>
@@ -29,6 +29,16 @@
                         <th scope="col">Edit</th>
                     </tr>
                 </thead>
+                <tfoot>
+                    <tr>
+                        <th scope="col">No</th>
+                        <th scope="col">Nama Pelatihan/Penelitian</th>
+                        <th scope="col">Nama Peserta</th>
+                        <th scope="col">NIP</th>
+                        <th scope="col">Sertifikat</th>
+                        <th scope="col">Edit</th>
+                    </tr>
+                </tfoot>
                 <tbody>
                     @foreach ($sertifikat as $post)
                         <tr>
@@ -52,3 +62,11 @@
         </div>
     </main>
 @endsection
+
+@push('script')
+<script>
+    $(document).ready(function() {
+        $('#dataSertifikat').DataTable();
+    });
+</script>
+@endpush
