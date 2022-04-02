@@ -28,10 +28,11 @@
                   @if( auth()->user()->level == 'admin' )
                     <li><a class="dropdown-item" href="/dashboard">Dashboard</a></li>
                     <li><hr class="dropdown-divider"></li>
-                  @endif
-                  <li>
+                  @else
+                    <li>
                       <a href="{{ route('profile', auth()->user()->id) }}" class="nav-link text-dark"> &nbsp; <i class="bi bi-person"></i> Profile</a>
-                  </li>
+                    </li>
+                  @endif
                   <li>
                     <form action="/" method="post">
                       @csrf

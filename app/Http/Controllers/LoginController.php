@@ -42,7 +42,7 @@ class LoginController extends Controller
 
     public function profile($id){
 
-        $user = User::findOrFail($id);
+        $user = Auth::user();
         $sertifikat = Sertifikat::join('pelatihans', 'sertifikats.pelatihan_id', '=', 'pelatihans.id')
                             ->join('post_data', 'sertifikats.peserta_id', '=', 'post_data.id')
                             ->get();

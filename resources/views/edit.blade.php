@@ -47,6 +47,17 @@
                         @enderror
                     </div>
 
+                    <div class="form-floating">
+                        <input type="password" class="form-control  @error('password') is-invalid @enderror" name="password"
+                            id="password" placeholder="Masukan password baru" required>
+                        <label for="floatingInput">Password</label>
+                        @error('password')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+
                     <button class="w-100 btn btn-lg btn-secondary mt-3" type="submit">Ubah</button>
                 </form>
             </main>
