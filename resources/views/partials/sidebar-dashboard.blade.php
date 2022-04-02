@@ -64,6 +64,13 @@
                         Data Sertifikat Pelatihan
                     </a>
                 </li>
+
+                <li class="nav-item">
+                    <a class="nav-link {{ Request::is('setting') ? 'active' : '' }} " href="{{route('setting')}}">
+                        <span data-feather="file-text"></span>
+                        Setting Banner
+                    </a>
+                </li>
             </ul>
 
             <ul class="nav flex-column mb-2">
