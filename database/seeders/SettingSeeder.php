@@ -15,19 +15,17 @@ class SettingSeeder extends Seeder
     public function run()
     {
         DB::table('settings')->insert([
-            [
-                'id' => 1,
-                'image' => '',
-                
-            ],
-            [
-                'id' => 2,
-                'image' => '',
-            ],
-            [
-                'id' => 3,
-                'image' => '',
-            ]
+            'id' => 1,
+            'image1' => '',
+            'title1' => 'Title',
+            'desc1' => 'description',
+            'image2' => '',
+            'title2' => 'Title',
+            'desc2' => 'description',
+            'image3' => '',
+            'title3' => 'Title',
+            'desc3' => 'description',
+             
         ]);
     }
 }

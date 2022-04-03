@@ -12,43 +12,64 @@
 
         <div class="carousel-inner" style="height: 550px">
             <div class="carousel-item active">
-                <img src="img/seminarKTI.jpg" class="bd-placeholder-img" width="100%" style="height: 550px"
+                @if (!empty($setting[0]->image1))
+                    <img src="{{ asset('storage/'.$setting[0]->image1) }}" alt="" height="550px">
+                @else
+                    <img src="img/seminarKTI.jpg" class="bd-placeholder-img" width="100%" style="height: 550px"
                     xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice"
                     focusable="false">
+                @endif
 
                 <div class="container">
                     <div class="carousel-caption text-start">
-                        <h1 class="bordertext">Seminar KTI</h1>
-                        <p class="bordertext">Foto Bersama Diklat dan Seminar KTI Guru, Kepala Sekolah, dan Pengawas di
-                            Kecamatan Kemiri, Kabupaten OKU Timur</p>
+                        @if (!empty($setting[0]->title1))
+                            <h1>{{ $setting[0]->title1 }}</h1>
+                        @endif
+                        @if (!empty($setting[0]->desc1))
+                            <p>{{ $setting[0]->desc1 }}</p>
+                        @endif
                     </div>
                 </div>
             </div>
 
             <div class="carousel-item">
-                <img src="img/seminarKTI2.jpg" class="bd-placeholder-img" width="100%" style="height: 550px"
+                @if (!empty('storage/'.$setting[0]->image2))
+                <img src="{{ asset($setting[0]->image2) }}" alt="" height="550px">
+                @else
+                    <img src="img/seminarKTI.jpg" class="bd-placeholder-img" width="100%" style="height: 550px"
                     xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice"
                     focusable="false">
+                @endif
 
                 <div class="container">
-                    <div class="carousel-caption">
-                        <h1 class="bordertext">Seminar KTI Bulan September 2021</h1>
-                        <p class="bordertext">Foto Peserta Diklat dan Seminar KTI Guru, Kepala Sekolah, dan Pengawas di
-                            SDN Simpang Kepuh Kecamatan Madang, Suku I, Kabupaten OKU Timur</p>
+                    <div class="carousel-caption text-start">
+                        @if (!empty($setting[0]->title2))
+                            <h1>{{ $setting[0]->title2 }}</h1>
+                        @endif
+                        @if (!empty($setting[0]->desc2))
+                            <p>{{ $setting[0]->desc2 }}</p>
+                        @endif
                     </div>
                 </div>
             </div>
 
             <div class="carousel-item">
-                <img src="img/seminarKTI3.jpg" class="bd-placeholder-img" width="100%" style="height: 550px"
+                @if (!empty($setting[0]->image3))
+                <img src="{{ asset('storage/'.$setting[0]->image3) }}" alt="" height="550px">
+                @else
+                    <img src="img/seminarKTI.jpg" class="bd-placeholder-img" width="100%" style="height: 550px"
                     xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice"
                     focusable="false">
+                @endif
 
                 <div class="container">
-                    <div class="carousel-caption text-end">
-                        <h1 class="bordertext">Seminar KTI</h1>
-                        <p class="bordertext">Foto Bersama Diklat dan Seminar KTI Guru, Kepala Sekolah, dan Pengawas di
-                            Kecamatan Kemiri, Kabupaten OKU Timur</p>
+                    <div class="carousel-caption text-start">
+                        @if (!empty($setting[0]->title3))
+                            <h1>{{ $setting[0]->title3 }}</h1>
+                        @endif
+                        @if (!empty($setting[0]->desc3))
+                            <p>{{ $setting[0]->desc3 }}</p>
+                        @endif
                     </div>
                 </div>
             </div>

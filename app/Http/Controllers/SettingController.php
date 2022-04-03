@@ -82,7 +82,17 @@ class SettingController extends Controller
         $setting = Setting::findOrFail($id);
 
         $setting->update([
-            'image' => $request->image->store('banner'),
+            'image1' => $request->image1->store('banner'),
+            'title1' => $request->title1,
+            'desc1' => $request->desc1,
+
+            'image2' => $request->image2->store('banner'),
+            'title2' => $request->title2,
+            'desc2' => $request->desc2,
+
+            'image3' => $request->image3->store('banner'),
+            'title3' => $request->title3,
+            'desc3' => $request->desc3,
         ]);
 
         return redirect()->route('setting')->with('success', 'Banner Berhasil Diupdate');

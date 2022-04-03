@@ -14,10 +14,96 @@
                 {{ method_field('PATCH') }}
 
                 <div class="form-group">
-                    <label for="">Banner</label>
+                    <label for="">Title 1</label>
+                    <input type="text" class="form-control" name="title1" value="{{ $setting[0]->title1 }}">
+                    @error('title')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
+
+                <div class="form-group mt-4">
+                    <label for="">Description 1</label>
+                    <input type="text" class="form-control" name="desc1" value="{{ $setting[0]->desc1 }}">
+                    @error('desc1')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
+
+                <div class="form-group mt-4">
+                    <label for="">Banner 1</label>
                 {{-- <img src="{{ asset(auth()->user()->images) }}" alt="" height="128"> --}}
-                    <input type="file" class="form-control-file" name="image">
-                    @error('image')
+                    <input type="file" class="form-control-file" name="image1" value="{{ $setting[0]->title2 }}">
+                    @error('image1')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
+
+                <hr>
+
+                <div class="form-group">
+                    <label for="">Title 2</label>
+                    <input type="text" class="form-control" name="title2" value="{{ $setting[0]->desc2 }}">
+                    @error('title2')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
+
+                <div class="form-group mt-4">
+                    <label for="">Description 2</label>
+                    <input type="text" class="form-control" name="desc2">
+                    @error('desc2')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
+
+                <div class="form-group mt-4">
+                    <label for="">Banner 2</label>
+                {{-- <img src="{{ asset(auth()->user()->images) }}" alt="" height="128"> --}}
+                    <input type="file" class="form-control-file" name="image2">
+                    @error('image2')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
+
+                <hr>
+
+                <div class="form-group">
+                    <label for="">Title 3</label>
+                    <input type="text" class="form-control" name="title3" value="{{ $setting[0]->title3 }}">
+                    @error('title3')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
+
+                <div class="form-group mt-4">
+                    <label for="">Description 3</label>
+                    <input type="text" class="form-control" name="desc3" value="{{ $setting[0]->desc3 }}">
+                    @error('desc3')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
+
+                <div class="form-group mt-4">
+                    <label for="">Banner 3</label>
+                {{-- <img src="{{ asset(auth()->user()->images) }}" alt="" height="128"> --}}
+                    <input type="file" class="form-control-file" name="image3">
+                    @error('image3')
                         <div class="invalid-feedback">
                             {{ $message }}
                         </div>
