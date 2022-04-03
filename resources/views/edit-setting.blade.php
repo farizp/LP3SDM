@@ -14,32 +14,10 @@
                 {{ method_field('PATCH') }}
 
                 <div class="form-group">
-                    <label for="">Banner 1</label>
+                    <label for="">Banner</label>
                 {{-- <img src="{{ asset(auth()->user()->images) }}" alt="" height="128"> --}}
-                    <input type="file" class="form-control-file" name="image1">
-                    @error('image1')
-                        <div class="invalid-feedback">
-                            {{ $message }}
-                        </div>
-                    @enderror
-                </div>
-
-                <div class="form-group mt-3">
-                    <label for="">Banner 1</label>
-                {{-- <img src="{{ asset(auth()->user()->images) }}" alt="" height="128"> --}}
-                    <input type="file" class="form-control-file" name="image2">
-                    @error('image2')
-                        <div class="invalid-feedback">
-                            {{ $message }}
-                        </div>
-                    @enderror
-                </div>
-
-                <div class="form-group mt-3">
-                    <label for="">Banner 1</label>
-                {{-- <img src="{{ asset(auth()->user()->images) }}" alt="" height="128"> --}}
-                    <input type="file" class="form-control-file" name="image3">
-                    @error('image3')
+                    <input type="file" class="form-control-file" name="image">
+                    @error('image')
                         <div class="invalid-feedback">
                             {{ $message }}
                         </div>

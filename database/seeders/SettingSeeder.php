@@ -17,22 +17,16 @@ class SettingSeeder extends Seeder
         DB::table('settings')->insert([
             [
                 'id' => 1,
-                'image1' => '',
-                'image2' => '',
-                'image3' => ''
+                'image' => '',
                 
             ],
             [
                 'id' => 2,
-                'image1' => '',
-                'image2' => '',
-                'image3' => ''
+                'image' => '',
             ],
             [
                 'id' => 3,
-                'image1' => '',
-                'image2' => '',
-                'image3' => ''
+                'image' => '',
             ]
         ]);
     }

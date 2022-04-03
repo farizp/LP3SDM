@@ -15,9 +15,7 @@ class CreateSettingsTable extends Migration
     {
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
-            $table->string('image1');
-            $table->string('image2');
-            $table->string('image3');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

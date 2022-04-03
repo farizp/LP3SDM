@@ -15,10 +15,10 @@
         @foreach ($setting as $item)
             <div class="row mt-5">
                 <div class="col-md-4">
-                    @if ($item->foto_banner == null)
-                        <img src="{{ asset('storage/'.$item->image1) }}" class="img-fluid" alt="" srcset="">
-                    @else
+                    @if ($item->image == null)
                         <img src="https://ptsse.co.id/assets/gambar_galeri/default.png" alt="" width="100%" height="200">
+                    @else
+                        <img src="{{ asset('storage/'.$item->image) }}" class="img-fluid" alt="" srcset="">
                     @endif
                 </div>
                 <div class="col-md-8 d-flex align-items-center">
