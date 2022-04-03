@@ -26,16 +26,29 @@
                                 @foreach ($pelatihan as $post)
                                     <option value="{{ $post->id }}" name="pelatihan">{{ $post->nama_pelatihan }}</option>
                                 @endforeach
-                            </select>
-                            <label for="floatingSelect">Nama Pelatihan</label>
-                            @error('floatingSelect')
+                                </select>
+                                <label for="floatingSelect">Nama Pelatihan</label>
+                                @error('floatingSelect')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>
-                            @enderror
-                        </div>
-
-
+                                @enderror
+                            </div>
+                                @if (!empty($post))
+                                    @if ($post->id == $post->id ? 'selected' : '')
+                                    <div class="card">
+                                        <div class="card-body" style="border:none;">
+                                            {{ $post->narasumber }} <br>
+                                            {{ $post->tempat }} <br>
+                                            {{ $post->tanggal }} <br>
+                                            {{ $post->jam }} <br>
+                                            {{ $post->keterangan }}
+                                        </div>
+                                    </div>
+                                    @endif
+                                @endif
+                     
+                        <br>
                         <div class="form-floating">
                             <input type="text" class="form-control rounded-top @error('name') is-invalid @enderror"
                                 name="nama" id="name" value="{{ Auth::user()->name }}" required
