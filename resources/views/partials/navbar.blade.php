@@ -16,6 +16,9 @@
           <li class="nav-item">
             <a class="nav-link {{ ($title === "Pendaftaran") ? 'active' : '' }}" href="/registration">Pendaftaran</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link {{ ($title === "Blog") ? 'active' : '' }}" href="{{ route('blog-home') }}">Blog</a>
+          </li>
         </ul>
 
         <ul class="navbar-nav ms-auto">

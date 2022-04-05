@@ -113,7 +113,7 @@
           </div>
           
           <div class="load-more mt-5" align="center">
-              <a href="{{ route('blog') }}" class="btn btn-primary" style="text-decoration: none">Load More</a>
+              <a href="{{ route('blog-home') }}" class="btn btn-primary" style="text-decoration: none">Load More</a>
           </div>
 
         <hr class="featurette-divider">

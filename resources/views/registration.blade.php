@@ -21,32 +21,39 @@
                         {{-- @method('PUT') --}}
 
                         <div class="form-floating mb-3">
-                            <select class="form-select" id="floatingSelect" name="pelatihan_id">
+                            <select class="form-select" id="pelatihan" name="pelatihan_id">
                                 <option selected>Pilih Nama Pelatihan</option>
                                 @foreach ($pelatihan as $post)
-                                    <option value="{{ $post->id }}" name="pelatihan">{{ $post->nama_pelatihan }}</option>
+                                    <option value="{{ $post->id }}" data-value="{{ $post }}" name="pelatihan">
+                                        {{ $post->nama_pelatihan }} 
+                                    </option>
                                 @endforeach
                                 </select>
-                                <label for="floatingSelect">Nama Pelatihan</label>
-                                @error('floatingSelect')
+                                <label for="pelatihan">Nama Pelatihan</label>
+                                @error('pelatihan')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>
                                 @enderror
                             </div>
-                                @if (!empty($post))
-                                    @if ($post->id == $post->id ? 'selected' : '')
+                            
+                            <div id="showData">
+
+                            </div>
+                
+                                {{-- @if (!empty($pelatihan[0]))
+                                    @if ($pelatihan[0]->id == $pelatihan[0]->id ? 'selected' : '')
                                     <div class="card">
                                         <div class="card-body" style="border:none;">
-                                            {{ $post->narasumber }} <br>
-                                            {{ $post->tempat }} <br>
-                                            {{ $post->tanggal }} <br>
-                                            {{ $post->jam }} <br>
-                                            {{ $post->keterangan }}
+                                            {{ $pelatihan[0]->narasumber }} <br>
+                                            {{ $pelatihan[0]->tempat }} <br>
+                                            {{ $pelatihan[0]->tanggal }} <br>
+                                            {{ $pelatihan[0]->jam }} <br>
+                                            {{ $pelatihan[0]->keterangan }}
                                         </div>
                                     </div>
                                     @endif
-                                @endif
+                                @endif --}}
                      
                         <br>
                         <div class="form-floating">
@@ -229,3 +236,19 @@
     </div>
 
 @endsection
+
+@push('script')
+    
+    <script>
+        $('#pelatihan').on('click', function(e){
+            var pelatihan_id = e.target.value;
+            var dataShow = {!! json_encode($post->toArray()) !!};
+            var data = {
+                pelatihan_id: pelatihan_id,
+                dataShow: dataShow
+            };
+            console.log(data);
+        });
+    </script>
+
+@endpush

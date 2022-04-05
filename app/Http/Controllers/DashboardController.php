@@ -39,6 +39,16 @@ class DashboardController extends Controller
         return redirect()->route('blog')->with('success', 'Sertifikat Telah Diupload');
     }
 
+    public function show($id){
+        
+        $post = Blog::findOrFail($id);
+
+        return view('show-blog', [
+            "title" => "Blog | ".$post->judul,
+            "post" => $post
+        ]);
+    }
+
     public function edit($id)
     {
         $post = Blog::findOrFail($id);

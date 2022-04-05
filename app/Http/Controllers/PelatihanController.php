@@ -58,9 +58,9 @@ class PelatihanController extends Controller
      * @param  \App\Models\Pelatihan  $pelatihan
      * @return \Illuminate\Http\Response
      */
-    public function show(Pelatihan $pelatihan)
+    public function show($id)
     {
-        //
+        $pelatihan = Pelatihan::where('id', $id)->get();
     }
 
     /**
