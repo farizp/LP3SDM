@@ -63,6 +63,12 @@ class PelatihanController extends Controller
         $pelatihan = Pelatihan::where('id', $id)->get();
     }
 
+    public function getData(Request $request){
+
+        $pelatihan = Pelatihan::where('id', $request->pelatihan_id)->first();
+        return response()->json($pelatihan);
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

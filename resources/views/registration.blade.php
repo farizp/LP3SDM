@@ -38,23 +38,28 @@
                             </div>
                             
                             <div id="showData">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <label for="">Narasumber</label>
+                                        <input type="text" id="data_narasumber" readonly>
 
+                                        <label for="">Tempat</label>
+                                        <input type="text" id="data_tempat" readonly>
+
+                                        <label for="">Tanggal</label>
+                                        <input type="text" id="data_tanggal" readonly>
+
+                                        <label for="">Hari</label>
+                                        <input type="text" id="data_hari" readonly>
+                                       {{-- Narasumber : <span id="data_narasumber"></span> <br>
+                                       Tempat : <span id="data_tempat"></span> <br>
+                                       Tanggal : <span id="data_tanggal"></span> <br>
+                                       Hari  : <span id="data_hari"></span> <br> --}}
+
+                                    </div>
+                                </div>
                             </div>
                 
-                                {{-- @if (!empty($pelatihan[0]))
-                                    @if ($pelatihan[0]->id == $pelatihan[0]->id ? 'selected' : '')
-                                    <div class="card">
-                                        <div class="card-body" style="border:none;">
-                                            {{ $pelatihan[0]->narasumber }} <br>
-                                            {{ $pelatihan[0]->tempat }} <br>
-                                            {{ $pelatihan[0]->tanggal }} <br>
-                                            {{ $pelatihan[0]->jam }} <br>
-                                            {{ $pelatihan[0]->keterangan }}
-                                        </div>
-                                    </div>
-                                    @endif
-                                @endif --}}
-                     
                         <br>
                         <div class="form-floating">
                             <input type="text" class="form-control rounded-top @error('name') is-invalid @enderror"
@@ -240,14 +245,26 @@
 @push('script')
     
     <script>
-        $('#pelatihan').on('click', function(e){
+        $('#pelatihan').on('change', function(e){
             var pelatihan_id = e.target.value;
-            var dataShow = {!! json_encode($post->toArray()) !!};
-            var data = {
-                pelatihan_id: pelatihan_id,
-                dataShow: dataShow
-            };
-            console.log(data);
+            $.ajax({
+                url: '/data-pelatihan',
+                method: 'GET',
+                data: {pelatihan_id: pelatihan_id},
+                success: function(data){
+                    console.log(data);
+                    $('#data_narasumber').val(data.narasumber);
+                    $('#data_tempat').val(data.tempat);
+                    $('#data_tanggal').val(data.tanggal);
+                    $('#data_hari').val(data.hari);
+                }
+            })
+            // var dataPelatihan = {!! json_encode($post->toArray()) !!};
+            // var data = {
+            //     pelatihan_id: pelatihan_id,
+            //    dataPelatihan:dataPelatihan
+            // };
+            // console.log(data);
         });
     </script>
 

@@ -88,3 +88,4 @@ Route::get('/edit-setting/{id}', [SettingController::class, 'edit'])->name('edit
 Route::patch('/edit-setting/{id}', [SettingController::class, 'update'])->name('update-setting');
 
 Route::get('/pelatihan/{id}', [PelatihanController::class, 'show'])->name('pelatihan');
+Route::get('/data-pelatihan', [PelatihanController::class, 'getData']);
