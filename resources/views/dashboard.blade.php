@@ -34,15 +34,6 @@
                         <th scope="col">Edit</th>
                     </tr>
                 </thead>
-                <tfoot>
-                    <tr>
-                        <th scope="col">No</th>
-                        <th scope="col">Judul</th>
-                        <th scope="col">Keterangan</th>
-                        <th scope="col">Foto</th>
-                        <th scope="col">Edit</th>
-                    </tr>
-                </tfoot>
                 <tbody>
                     @foreach ($posts as $post)
                       <tr>

@@ -39,16 +39,6 @@
                         <th scope="col">Edit</th>
                     </tr>
                 </thead>
-                <tfoot>
-                    <tr>
-                        <th scope="col">No</th>
-                        <th scope="col">Nama</th>
-                        <th scope="col">NIP</th>
-                        <th scope="col">Level</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Edit</th>
-                    </tr>
-                </tfoot>
                 <tbody>
                     @foreach ($user as $users)
                         <tr>

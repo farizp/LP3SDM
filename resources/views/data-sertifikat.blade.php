@@ -29,16 +29,6 @@
                         <th scope="col">Edit</th>
                     </tr>
                 </thead>
-                <tfoot>
-                    <tr>
-                        <th scope="col">No</th>
-                        <th scope="col">Nama Pelatihan/Penelitian</th>
-                        <th scope="col">Nama Peserta</th>
-                        <th scope="col">NIP</th>
-                        <th scope="col">Sertifikat</th>
-                        <th scope="col">Edit</th>
-                    </tr>
-                </tfoot>
                 <tbody>
                     @foreach ($sertifikat as $post)
                         <tr>

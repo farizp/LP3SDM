@@ -45,27 +45,6 @@
             <th scope="col">Edit</th>
         </tr>
         </thead>
-        <tfoot>
-          <tr>
-            <th scope="col">No</th>
-            <th scope="col">Nama</th>
-            <th scope="col">NIP</th>
-            <th scope="col">No.Telp/HP/WA</th>
-            <th scope="col">Golongan</th>
-            <th scope="col">Nama Sekolah</th>
-            <th scope="col">Alamat Sekolah</th>
-            <th scope="col">Kelas Yang Diajar</th>
-            <th scope="col">Kurikulum Yang Dipakai</th>
-            <th scope="col">Mata Pelajaran Yang Diajar</th>
-            <th scope="col">Nama Kepala Sekolah</th>
-            <th scope="col">NIP Kepala Sekolah</th>
-            <th scope="col">Koordinator PKB</th>
-            <th scope="col">NIP Koordinator PKB</th>
-            <th scope="col">Kualifikasi Pendidikan</th>
-            <th scope="col">Nama Pelatihan</th>
-            <th scope="col">Edit</th>
-        </tr>
-        </tfoot>
         <tbody>
           @foreach ($postsData as $postData)
             <tr>
