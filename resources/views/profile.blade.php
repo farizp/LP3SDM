@@ -16,7 +16,8 @@
                 <div class="card">
                     <div class="card-body">
                         @if ($sertifikat->count() > 0)
-                            <p class="card-text">Nama : {{ $sertifikat[0]->nama }}</p>
+                            <p class="card-text">Nama : {{ $user->name }}</p>
+                            <p class="card-text">Email : {{ $user->email }}</p>
                             <p class="card-text">NIP : {{ $sertifikat[0]->nip }}</p>
                             <p class="card-text">No Telepon : {{ $sertifikat[0]->telp }}</p>
                             <p class="card-text">Pelatihan : 

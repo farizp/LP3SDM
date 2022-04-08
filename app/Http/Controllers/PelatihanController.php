@@ -58,9 +58,15 @@ class PelatihanController extends Controller
      * @param  \App\Models\Pelatihan  $pelatihan
      * @return \Illuminate\Http\Response
      */
-    public function show(Pelatihan $pelatihan)
+    public function show($id)
     {
-        //
+        $pelatihan = Pelatihan::where('id', $id)->get();
+    }
+
+    public function getData(Request $request){
+
+        $pelatihan = Pelatihan::where('id', $request->pelatihan_id)->first();
+        return response()->json($pelatihan);
     }
 
     /**

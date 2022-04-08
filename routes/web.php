@@ -8,6 +8,7 @@ use App\Http\Controllers\PostDataController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SertifikatController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SettingController;
 use App\Models\Pelatihan;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
@@ -55,7 +56,8 @@ Route::post('/dashboard/tambah', [DashboardController::class, 'store'])->middlew
 Route::get('/dashboard/ubah/{id}', [DashboardController::class, 'edit'])->middleware('auth')->name('edit-blog');
 Route::patch('/dashboard/ubah/{id}', [DashboardController::class, 'update'])->middleware('auth')->name('update-blog');
 Route::get('/dashboard/hapus/{id}', [DashboardController::class, 'destroy'])->middleware('auth')->name('delete-blog');
-Route::get('/blog', [DashboardController::class, 'blog'])->name('blog');
+Route::get('/blog', [DashboardController::class, 'blog'])->name('blog-home');
+Route::get('/blog/show/{id}', [DashboardController::class, 'show'])->name('show-blog');
 
 Route::resource('/data', DashboardPostController::class)->middleware('auth');
 
@@ -81,6 +83,9 @@ Route::get('/jadwal/ubah/{id}', [PelatihanController::class, 'edit'])->middlewar
 Route::patch('/jadwal/ubah{id}', [PelatihanController::class, 'update'])->middleware('auth')->name('update-jadwal');
 Route::delete('/jadwal/hapus/{id}', [PelatihanController::class, 'destroy'])->middleware('auth')->name('delete-jadwal');
 
+Route::get('/setting', [SettingController::class, 'index'])->name('setting');
+Route::get('/edit-setting/{id}', [SettingController::class, 'edit'])->name('edit-setting');
+Route::patch('/edit-setting/{id}', [SettingController::class, 'update'])->name('update-setting');
 
-
-
+Route::get('/pelatihan/{id}', [PelatihanController::class, 'show'])->name('pelatihan');
+Route::get('/data-pelatihan', [PelatihanController::class, 'getData']);

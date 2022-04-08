@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use App\Models\PostData;
+use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 
 class DashboardPostController extends Controller
@@ -111,6 +112,7 @@ class DashboardPostController extends Controller
             'name' => request('name'),
             'nip' => request('nip'),
             'email' => request('email'),
+            'password' => Hash::make(request('password')),
         ]);
 
         return redirect()->route('data-peserta')->with('success', 'Pos Berhasil Diupdate');

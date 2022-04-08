@@ -25,8 +25,10 @@
                     <br>
                     <div class="form-group">
                         <label for="">Keterangan</label>
-                        <textarea name="keterangan" rows="5" class="form-control" placeholder="Masukkan Keterangan"
-                            required value="{{ old('keterangan') }}"></textarea>
+                        <textarea class="form-control" name="keterangan" id="keterangan" required rows="3"
+                        value="{{ old('keterangan') }}"></textarea>
+                        {{-- <textarea name="keterangan" rows="5" class="form-control" id="keterangan" placeholder="Masukkan Keterangan"
+                            required value="{{ old('keterangan') }}"></textarea> --}}
                         @error('keterangan')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -51,4 +53,13 @@
             </main>
         </div>
     </div>
+
+    
 @endsection
+
+@push('script')
+<script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace( 'keterangan');
+</script>
+@endpush
