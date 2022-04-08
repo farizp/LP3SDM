@@ -13,7 +13,7 @@
                     @csrf
 
                     <div class="form-floating">
-                        <select class="form-select" id="floatingSelect" name="pelatihan_id">
+                        <select class="form-select" id="floatingSelect" name="pelatihan_id" required>
                             <option selected>Pilih Nama Pelatihan</option>
                             @foreach ($pelatihan as $post)
                                 <option value="{{ $post->id }}">{{ $post->nama_pelatihan }}</option>
@@ -23,7 +23,7 @@
                     </div>
 
                     <div class="form-floating">
-                        <select class="form-select" id="floatingSelect" name="peserta_id">
+                        <select class="form-select" id="floatingSelect" name="peserta_id" required>
                             <option selected>Pilih Nama Peserta</option>
                             @foreach ($postData as $post)
                                 <option value="{{ $post->id }}">{{ $post->nama }}</option>
@@ -45,7 +45,7 @@
                     <div class="form-group">
                         <label for="">Foto Sertifikat</label>
                     {{-- <img src="{{ asset(auth()->user()->images) }}" alt="" height="128"> --}}
-                        <input type="file" class="form-control-file" name="foto_sertifikat">
+                        <input type="file" class="form-control-file" name="foto_sertifikat" required>
                         @error('foto_sertifikat')
                             <div class="invalid-feedback">
                                 {{ $message }}
