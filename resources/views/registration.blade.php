@@ -23,11 +23,13 @@
                         <div class="form-floating mb-3">
                             <select class="form-select" id="pelatihan" name="pelatihan_id">
                                 <option selected>Pilih Nama Pelatihan</option>
-                                @foreach ($pelatihan as $post)
-                                    <option value="{{ $post->id }}" data-value="{{ $post }}" name="pelatihan">
-                                        {{ $post->nama_pelatihan }} 
-                                    </option>
-                                @endforeach
+                                @if ($pelatihan->count() > 0)
+                                    @foreach ($pelatihan as $item)
+                                        <option value="{{ $item->id }}">{{ $item->nama_pelatihan }}</option>
+                                    @endforeach
+                                    
+                                @endif
+
                                 </select>
                                 <label for="pelatihan">Nama Pelatihan</label>
                                 @error('pelatihan')
@@ -51,10 +53,6 @@
 
                                         <label for="">Hari</label>
                                         <input type="text" id="data_hari" readonly>
-                                       {{-- Narasumber : <span id="data_narasumber"></span> <br>
-                                       Tempat : <span id="data_tempat"></span> <br>
-                                       Tanggal : <span id="data_tanggal"></span> <br>
-                                       Hari  : <span id="data_hari"></span> <br> --}}
 
                                     </div>
                                 </div>
@@ -259,12 +257,6 @@
                     $('#data_hari').val(data.hari);
                 }
             })
-            // var dataPelatihan = {!! json_encode($post->toArray()) !!};
-            // var data = {
-            //     pelatihan_id: pelatihan_id,
-            //    dataPelatihan:dataPelatihan
-            // };
-            // console.log(data);
         });
     </script>
 
