@@ -15,7 +15,7 @@
 
                 <div class="form-group">
                     <label for="">Title 1</label>
-                    <input type="text" class="form-control" name="title1" value="{{ $setting->title1 }}">
+                    <input type="text" class="form-control" name="title1" value="{{ $setting->title1 }}" required>
                     @error('title')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -25,7 +25,7 @@
 
                 <div class="form-group mt-4">
                     <label for="">Description 1</label>
-                    <input type="text" class="form-control" name="desc1" value="{{ $setting->desc1 }}">
+                    <input type="text" class="form-control" name="desc1" value="{{ $setting->desc1 }}" required>
                     @error('desc1')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -36,7 +36,7 @@
                 <div class="form-group mt-4">
                     <label for="">Banner 1</label>
                 {{-- <img src="{{ asset(auth()->user()->images) }}" alt="" height="128"> --}}
-                    <input type="file" class="form-control-file" name="image1" value="{{ $setting->title2 }}">
+                    <input type="file" class="form-control-file" name="image1" value="{{ $setting->title2 }}" required>
                     @error('image1')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -48,7 +48,7 @@
 
                 <div class="form-group">
                     <label for="">Title 2</label>
-                    <input type="text" class="form-control" name="title2" value="{{ $setting->desc2 }}">
+                    <input type="text" class="form-control" name="title2" value="{{ $setting->desc2 }}" required>
                     @error('title2')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -58,7 +58,7 @@
 
                 <div class="form-group mt-4">
                     <label for="">Description 2</label>
-                    <input type="text" class="form-control" name="desc2">
+                    <input type="text" class="form-control" name="desc2" required>
                     @error('desc2')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -69,7 +69,7 @@
                 <div class="form-group mt-4">
                     <label for="">Banner 2</label>
                 {{-- <img src="{{ asset(auth()->user()->images) }}" alt="" height="128"> --}}
-                    <input type="file" class="form-control-file" name="image2">
+                    <input type="file" class="form-control-file" name="image2" required>
                     @error('image2')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -81,7 +81,7 @@
 
                 <div class="form-group">
                     <label for="">Title 3</label>
-                    <input type="text" class="form-control" name="title3" value="{{ $setting->title3 }}">
+                    <input type="text" class="form-control" name="title3" value="{{ $setting->title3 }}" required>
                     @error('title3')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -91,7 +91,7 @@
 
                 <div class="form-group mt-4">
                     <label for="">Description 3</label>
-                    <input type="text" class="form-control" name="desc3" value="{{ $setting->desc3 }}">
+                    <input type="text" class="form-control" name="desc3" value="{{ $setting->desc3 }}" required>
                     @error('desc3')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -102,7 +102,7 @@
                 <div class="form-group mt-4">
                     <label for="">Banner 3</label>
                 {{-- <img src="{{ asset(auth()->user()->images) }}" alt="" height="128"> --}}
-                    <input type="file" class="form-control-file" name="image3">
+                    <input type="file" class="form-control-file" name="image3" required>
                     @error('image3')
                         <div class="invalid-feedback">
                             {{ $message }}

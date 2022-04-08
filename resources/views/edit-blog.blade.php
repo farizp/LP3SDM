@@ -36,7 +36,7 @@
                     <div class="form-group">
                         <label for="">Foto Sertifikat</label>
                     {{-- <img src="{{ asset(auth()->user()->images) }}" alt="" height="128"> --}}
-                        <input type="file" class="form-control-file" name="foto" value="{{ $post->foto }}">
+                        <input type="file" class="form-control-file" name="foto" value="{{ $post->foto }}" required>
                         @error('foto')
                             <div class="invalid-feedback">
                                 {{ $message }}

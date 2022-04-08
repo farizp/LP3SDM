@@ -39,7 +39,7 @@
                     <div class="form-group">
                         <label for="">Foto</label>
                         {{-- <img src="{{ asset(auth()->user()->images) }}" alt="" height="128"> --}}
-                        <input type="file" class="form-control-file" name="foto">
+                        <input type="file" class="form-control-file" name="foto" required>
                         @error('foto')
                             <div class="invalid-feedback">
                                 {{ $message }}

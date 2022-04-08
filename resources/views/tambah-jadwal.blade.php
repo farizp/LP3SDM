@@ -13,7 +13,7 @@
 
                     <div class="form-floating">
                         <input type="text" class="form-control rounded-top @error('nama_pelatihan') is-invalid @enderror" name="nama_pelatihan"
-                            id="nama_pelatihan" placeholder="Masukkan Nama Pelatihan">
+                            id="nama_pelatihan" placeholder="Masukkan Nama Pelatihan" required>
                         <label for="floatingInput">Nama Pelatihan</label>
                         @error('nama_pelatihan')
                             <div class="invalid-feedback">
@@ -23,7 +23,7 @@
                     </div>
 
                     <div class="form-floating">
-                        <input type="text" class="form-control  @error('narasumber') is-invalid @enderror" name="narasumber" id="narasumber" placeholder="Masukkan Narasumber">
+                        <input type="text" class="form-control  @error('narasumber') is-invalid @enderror" name="narasumber" id="narasumber" placeholder="Masukkan Narasumber" required>
                         <label for="floatingInput">Narasumber</label>
                         @error('narasumber')
                             <div class="invalid-feedback">
@@ -33,7 +33,7 @@
                     </div>
 
                     <div class="form-floating">
-                        <input type="text" class="form-control  @error('tempat') is-invalid @enderror" name="tempat" id="tempat" placeholder="Masukkan Tempat">
+                        <input type="text" class="form-control  @error('tempat') is-invalid @enderror" name="tempat" id="tempat" placeholder="Masukkan Tempat" required>
                         <label for="floatingInput">Tempat</label>
                         @error('tempat')
                             <div class="invalid-feedback">
@@ -43,7 +43,7 @@
                     </div>
 
                     <div class="form-floating">
-                        <input type="date" class="form-control  @error('tanggal') is-invalid @enderror" name="tanggal" id="tanggal" placeholder="Masukkan Tanggal">
+                        <input type="date" class="form-control  @error('tanggal') is-invalid @enderror" name="tanggal" id="tanggal" placeholder="Masukkan Tanggal" required>
                         <label for="floatingInput">Tanggal</label>
                         @error('tanggal')
                             <div class="invalid-feedback">
@@ -54,7 +54,7 @@
 
                     <div class="form-floating">
                         <select class="form-select" @error('hari') is-invalid @enderror" name="hari"
-                            id="hari" aria-label="Pilih hari" aria-placeholder="Pilih Hari">
+                            id="hari" aria-label="Pilih hari" aria-placeholder="Pilih Hari" required>
                             <option value="">Pilih Hari</option>
                             <option value="Senin">Senin</option>
                             <option value="Selasa">Selasa</option>
