@@ -27,14 +27,10 @@
                         Blog
                     </a>
                 </li>
-            </ul>
-
-            <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link {{ Request::is('jadwal') ? 'active' : '' }} " aria-current="page"
-                        href="/jadwal">
-                        <span data-feather="list"></span>
-                        Jadwal Pelatihan
+                    <a class="nav-link {{ Request::is('setting') ? 'active' : '' }} " href="{{route('setting')}}">
+                        <span data-feather="airplay"></span>
+                        Banner
                     </a>
                 </li>
             </ul>
@@ -45,32 +41,35 @@
 
             <ul class="nav flex-column mb-2">
                 <li class="nav-item">
+                    <a class="nav-link {{ Request::is('jadwal') ? 'active' : '' }} " aria-current="page"
+                        href="/jadwal">
+                        <span data-feather="calendar"></span>
+                        Jadwal Pelatihan
+                    </a>
+                </li>
+
+                <li class="nav-item">
                     <a class="nav-link {{ Request::is('data-peserta') ? 'active' : '' }} " href="/data-peserta">
-                        <span data-feather="file-text"></span>
-                        Data Akun
+                        <span data-feather="users"></span>
+                        Akun
                     </a>
                 </li>
 
                 <li class="nav-item">
                     <a class="nav-link {{ Request::is('data') ? 'active' : '' }} " href="/data">
-                        <span data-feather="file-text"></span>
-                        Data Pendaftaran Peserta Pelatihan
+                        <span data-feather="user-check"></span>
+                        Pendaftaran Peserta Pelatihan
                     </a>
                 </li>
 
                 <li class="nav-item">
                     <a class="nav-link {{ Request::is('data-sertifikat') ? 'active' : '' }} " href="/data-sertifikat">
                         <span data-feather="file-text"></span>
-                        Data Sertifikat Pelatihan
+                        Sertifikat Pelatihan
                     </a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link {{ Request::is('setting') ? 'active' : '' }} " href="{{route('setting')}}">
-                        <span data-feather="file-text"></span>
-                        Setting Banner
-                    </a>
-                </li>
+                
             </ul>
 
             <ul class="nav flex-column mb-2">

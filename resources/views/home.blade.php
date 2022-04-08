@@ -13,9 +13,9 @@
         <div class="carousel-inner" style="height: 550px">
             <div class="carousel-item active">
                 @if (!empty($setting[0]->image1))
-                    <img src="{{ asset('storage/'.$setting[0]->image1) }}" alt="" height="550px">
+                    <img src="{{ asset('storage/'.$setting[0]->image1) }}" alt="" height="100%">
                 @else
-                    <img src="img/seminarKTI.jpg" class="bd-placeholder-img" width="100%" style="height: 550px"
+                    <img src="img/seminarKTI.jpg" class="bd-placeholder-img" width="100%" height="100%"
                     xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice"
                     focusable="false">
                 @endif
@@ -23,20 +23,20 @@
                 <div class="container">
                     <div class="carousel-caption text-start">
                         @if (!empty($setting[0]->title1))
-                            <h1>{{ $setting[0]->title1 }}</h1>
+                            <h1 style="text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">{{ $setting[0]->title1 }}</h1>
                         @endif
                         @if (!empty($setting[0]->desc1))
-                            <p>{{ $setting[0]->desc1 }}</p>
+                            <p style="text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">{{ $setting[0]->desc1 }}</p>
                         @endif
                     </div>
                 </div>
             </div>
 
             <div class="carousel-item">
-                @if (!empty('storage/'.$setting[0]->image2))
-                <img src="{{ asset($setting[0]->image2) }}" alt="" height="550px">
+                @if (!empty($setting[0]->image2))
+                <img src="{{ asset('storage/'.$setting[0]->image2) }}" alt="" height="100%">
                 @else
-                    <img src="img/seminarKTI.jpg" class="bd-placeholder-img" width="100%" style="height: 550px"
+                    <img src="img/seminarKTI.jpg" class="bd-placeholder-img" width="100%" height="100%"
                     xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice"
                     focusable="false">
                 @endif
@@ -44,10 +44,10 @@
                 <div class="container">
                     <div class="carousel-caption text-start">
                         @if (!empty($setting[0]->title2))
-                            <h1>{{ $setting[0]->title2 }}</h1>
+                            <h1 style="text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">{{ $setting[0]->title2 }}</h1>
                         @endif
                         @if (!empty($setting[0]->desc2))
-                            <p>{{ $setting[0]->desc2 }}</p>
+                            <p style="text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">{{ $setting[0]->desc2 }}</p>
                         @endif
                     </div>
                 </div>
@@ -55,9 +55,9 @@
 
             <div class="carousel-item">
                 @if (!empty($setting[0]->image3))
-                <img src="{{ asset('storage/'.$setting[0]->image3) }}" alt="" height="550px">
+                <img src="{{ asset('storage/'.$setting[0]->image3) }}" alt="" height="100%">
                 @else
-                    <img src="img/seminarKTI.jpg" class="bd-placeholder-img" width="100%" style="height: 550px"
+                    <img src="img/seminarKTI.jpg" class="bd-placeholder-img" width="100%" height="100%"
                     xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice"
                     focusable="false">
                 @endif
@@ -65,10 +65,10 @@
                 <div class="container">
                     <div class="carousel-caption text-start">
                         @if (!empty($setting[0]->title3))
-                            <h1>{{ $setting[0]->title3 }}</h1>
+                            <h1 style="text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">{{ $setting[0]->title3 }}</h1>
                         @endif
                         @if (!empty($setting[0]->desc3))
-                            <p>{{ $setting[0]->desc3 }}</p>
+                            <p style="text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">{{ $setting[0]->desc3 }}</p>
                         @endif
                     </div>
                 </div>

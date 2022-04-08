@@ -24,7 +24,7 @@
                     <br>
                     <div class="form-group">
                         <label for="">Keterangan</label>
-                        <textarea name="keterangan" rows="5" class="form-control"
+                        <textarea name="keterangan" id="keterangan" rows="5" class="form-control"
                             required value="{{ old('keterangan') }}">{{ $post->keterangan }}</textarea>
                         @error('keterangan')
                             <div class="invalid-feedback">
@@ -52,3 +52,10 @@
     </div>
 
 @endsection
+
+@push('script')
+<script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace( 'keterangan');
+</script>
+@endpush

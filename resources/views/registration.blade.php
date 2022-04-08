@@ -60,7 +60,7 @@
                                 </div>
                             </div>
                 
-                        <br>
+                        <hr>
                         <div class="form-floating">
                             <input type="text" class="form-control rounded-top @error('name') is-invalid @enderror"
                                 name="nama" id="name" value="{{ Auth::user()->name }}" required
