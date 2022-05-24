@@ -7,7 +7,7 @@
             <main class="form-register">
                 <h1 class="h3 f2-normal text-center">Tambah Blog</h1>
                 <div class="text-center">
-                    <i class="bi bi-person-plus" style="font-size:150px"></i>
+                    <i class="bi bi-card-text" style="font-size:150px"></i>
                 </div>
                 <form action="{{ route('post-blog') }}" method="post" enctype="multipart/form-data">
                     @csrf
@@ -47,7 +47,7 @@
                         @enderror
                     </div>
 
-                    <button class="w-100 btn btn-lg btn-secondary mt-3" type="submit">Tambah</button>
+                    <button class="w-100 btn btn-lg btn-success mt-3" type="submit">Tambah</button>
                 </form>
 
             </main>

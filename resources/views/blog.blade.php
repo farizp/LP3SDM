@@ -11,7 +11,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ $item->judul }}</h5>
                     <p class="card-text">
-                        {{ Str::limit($item->keterangan, 200) }} 
+                        {!! Str::limit($item->keterangan, 200) !!} 
                     </p>
                     <a href="{{ route('show-blog', $item->id) }}" class="btn btn-primary">Lanjut Baca</a>
                 </div>

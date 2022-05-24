@@ -17,7 +17,7 @@ class SettingController extends Controller
         $setting = Setting::all();
 
         return view('setting', [
-            'title' => 'Setting',
+            'title' => 'Banner',
             'setting' => $setting   
         ]);
     }
@@ -65,7 +65,7 @@ class SettingController extends Controller
         $setting = Setting::findOrFail($id);
 
         return view('edit-setting', [
-            'title' => 'Edit Banner',
+            'title' => 'Ubah Banner',
             'setting' => $setting
         ]);
     }

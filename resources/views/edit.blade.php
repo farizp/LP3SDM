@@ -1,13 +1,12 @@
 @extends('layout/main-dashboard')
 
 @section('container')
-
     <div class="row justify-content-center">
         <div class="col-lg-5 mt-5 mb-5">
             <main class="form-register">
                 <h1 class="h3 f2-normal text-center">Ubah Data Akun</h1>
                 <div class="text-center">
-                    <i class="bi bi-person-plus" style="font-size:150px"></i>
+                    <i class="bi bi-people" style="font-size:150px"></i>
                 </div>
                 <form action="{{ route('edit-datapeserta.update', $post->id) }}" method="post">
                     @csrf
@@ -58,10 +57,9 @@
                         @enderror
                     </div>
 
-                    <button class="w-100 btn btn-lg btn-secondary mt-3" type="submit">Ubah</button>
+                    <button class="w-100 btn btn-lg btn-warning mt-3" type="submit">Ubah</button>
                 </form>
             </main>
         </div>
     </div>
-
 @endsection

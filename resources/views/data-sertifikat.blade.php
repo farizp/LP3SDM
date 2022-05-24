@@ -3,7 +3,7 @@
 @section('container')
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <h1 class="h2">Data Sertifikat</h1>
+            <h1 class="h2">Sertifikat</h1>
         </div>
 
         @if (session()->has('success'))
@@ -37,13 +37,15 @@
                             <td>{{ $post->nama }}</td>
                             <td>{{ $post->nip }}</td>
                             <td>
-                                <img src="{{ asset('storage/'.$post->foto_sertifikat) }}" alt="" height="128">
+                                <img src="{{ asset('storage/' . $post->foto_sertifikat) }}" alt="" height="128">
                             </td>
                             <td>
                                 <a href="{{ route('edit-sertifikat', $post->id) }}" class="btn btn-warning"><span
-                                        class="" data-feather="edit" style="margin-bottom : 2px"></span> Edit</a>
+                                        class="" data-feather="edit" style="margin-bottom : 2px"></span>
+                                </a>
                                 <a href="{{ route('delete-sertifikat', $post->id) }}" class="btn btn-danger"><span
-                                        class="" data-feather="trash" style="margin-bottom : 2px"></span> Hapus</a>
+                                        class="" data-feather="trash" style="margin-bottom : 2px"></span>
+                                </a>
                             </td>
                         </tr>
                     @endforeach
@@ -54,9 +56,9 @@
 @endsection
 
 @push('script')
-<script>
-    $(document).ready(function() {
-        $('#dataSertifikat').DataTable();
-    });
-</script>
+    <script>
+        $(document).ready(function() {
+            $('#dataSertifikat').DataTable();
+        });
+    </script>
 @endpush

@@ -53,7 +53,7 @@ class DashboardController extends Controller
     {
         $post = Blog::findOrFail($id);
         return view('edit-blog', [
-            'title' => 'Edit',
+            'title' => 'Ubah Blog',
             'post' => $post
         ]);
     }

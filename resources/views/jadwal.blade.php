@@ -13,8 +13,8 @@
         @endif
 
         <div align="right">
-            <a href="{{ route('tambah-jadwal') }}" class="btn btn-success"><span class=""
-                    data-feather="plus" style="margin-bottom : 2px"></span> Buat Jadwal</a>
+            <a href="{{ route('tambah-jadwal') }}" class="btn btn-success"><span class="" data-feather="plus"
+                    style="margin-bottom : 2px"></span> Buat Jadwal</a>
         </div>
         <br>
         <div class="table-responsive">
@@ -32,21 +32,22 @@
                 </thead>
                 <tbody>
                     @foreach ($posts as $post)
-                    <tr>
-                        <td>{{ $loop->iteration }}</td>
-                        <td>{{ $post->nama_pelatihan }}</td>
-                        <td>{{ $post->narasumber }}</td>
-                        <td>{{ $post->tempat }}</td>
-                        <td>{{ $post->tanggal }}</td>
-                        <td>{{ $post->hari }}</td>
-                        <td>
-                            <a href="{{ route('edit-jadwal', $post->id) }}" class="badge bg-warning"><span
-                                    data-feather="edit"></span></a>
-                            <a href="{{ route('delete-jadwal', $post->id) }}" class="badge bg-danger" onclick="return confirm('Apakah Jadwal Ingin Di Hapus?')"><span
-                                    data-feather="x-circle"></span></a>
-                        </td>
-                    </tr>
-                @endforeach
+                        <tr>
+                            <td>{{ $loop->iteration }}</td>
+                            <td>{{ $post->nama_pelatihan }}</td>
+                            <td>{{ $post->narasumber }}</td>
+                            <td>{{ $post->tempat }}</td>
+                            <td>{{ $post->tanggal }}</td>
+                            <td>{{ $post->hari }}</td>
+                            <td>
+                                <a href="{{ route('edit-jadwal', $post->id) }}" class="badge bg-warning"><span
+                                        data-feather="edit"></span></a>
+                                <a href="{{ route('delete-jadwal', $post->id) }}" class="badge bg-danger"
+                                    onclick="return confirm('Apakah Jadwal Ingin Di Hapus?')"><span
+                                        data-feather="x-circle"></span></a>
+                            </td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
@@ -55,9 +56,8 @@
 
 @push('script')
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             $('#dataJadwal').DataTable();
         });
     </script>
-    
 @endpush

@@ -6,7 +6,7 @@
             <main class="form-register">
                 <h1 class="h3 f2-normal text-center">Ubah Blog</h1>
                 <div class="text-center">
-                    <i class="bi bi-person-plus" style="font-size:150px"></i>
+                    <i class="bi bi-card-text" style="font-size:150px"></i>
                 </div>
                 <form action="{{ route('update-blog', $post->id) }}" method="post" enctype="multipart/form-data">
                     @csrf
@@ -24,8 +24,8 @@
                     <br>
                     <div class="form-group">
                         <label for="">Keterangan</label>
-                        <textarea name="keterangan" id="keterangan" rows="5" class="form-control"
-                            required value="{{ old('keterangan') }}">{{ $post->keterangan }}</textarea>
+                        <textarea name="keterangan" id="keterangan" rows="5" class="form-control" required
+                            value="{{ old('keterangan') }}">{{ $post->keterangan }}</textarea>
                         @error('keterangan')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -35,7 +35,7 @@
                     <br>
                     <div class="form-group">
                         <label for="">Foto Sertifikat</label>
-                    {{-- <img src="{{ asset(auth()->user()->images) }}" alt="" height="128"> --}}
+                        {{-- <img src="{{ asset(auth()->user()->images) }}" alt="" height="128"> --}}
                         <input type="file" class="form-control-file" name="foto" value="{{ $post->foto }}" required>
                         @error('foto')
                             <div class="invalid-feedback">
@@ -45,17 +45,16 @@
                     </div>
 
 
-                    <button class="w-100 btn btn-lg btn-secondary mt-3" type="submit">Ubah</button>
+                    <button class="w-100 btn btn-lg btn-warning mt-3" type="submit">Ubah</button>
                 </form>
             </main>
         </div>
     </div>
-
 @endsection
 
 @push('script')
-<script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
-<script>
-    CKEDITOR.replace( 'keterangan');
-</script>
+    <script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace('keterangan');
+    </script>
 @endpush
