@@ -42,7 +42,6 @@
             <th scope="col">NIP Koordinator PKB</th>
             <th scope="col">Kualifikasi Pendidikan</th>
             <th scope="col">Nama Pelatihan</th>
-            <th scope="col">Edit</th>
         </tr>
         </thead>
         <tbody>
@@ -64,15 +63,6 @@
               <td>{{ $postData -> nip_pkb }}</td>
               <td>{{ $postData -> pendidikan }}</td>
               <td>{{ $postData -> nama_pelatihan }}</td>
-              <td>
-                {{-- <a href="/edit" class="badge bg-warning"><span data-feather="edit"></span></a> --}}
-                <a href="{{ url('/delete/peserta', $postData->id) }}" class="badge bg-danger border-0" onclick="return confirm('Apakah Data Ingin Di Hapus?')"><span data-feather="x-circle"></span></a>
-                {{-- <form action="/data-peserta" method="POST" class="d-inline">
-                  @method('deleted')
-                  @csrf
-                  <button class="badge bg-danger border-0" onclick="return confirm('Apakah Data Ingin Di Hapus?')"><span data-feather="x-circle"></span></button>
-                </form> --}}
-              </td>
             </tr>
             @endforeach
         </tbody>
