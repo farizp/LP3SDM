@@ -15,8 +15,8 @@
                     <a class="nav-link {{ $title === 'Tentang' ? 'active' : '' }}" href="/about">Tentang</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ $title === 'Blog' ? 'active' : '' }}"
-                        href="{{ route('blog-home') }}">Blog</a>
+                    <a class="nav-link {{ $title === 'Artikel' ? 'active' : '' }}"
+                        href="{{ route('blog-home') }}">Artikel</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {{ $title === 'Pendaftaran' ? 'active' : '' }}"

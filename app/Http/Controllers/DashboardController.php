@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -78,12 +79,26 @@ class DashboardController extends Controller
     public function destroy($id)
     {
         $post = Blog::findOrFail($id);
-        
-        if($post->foto){
-            \Storage::delete($post->foto);
-        }
 
         $post->delete();
         return redirect()->route('blog')->with('success', 'Blog Berhasil Dihapus');
+    }
+
+    public function trash(){
+
+        $posts = Blog::onlyTrashed()->get();
+
+        return view('trash', [
+            'title' => 'Trash',
+            'posts' => $posts
+        ]);	
+    }
+
+    public function restore($id){
+
+        $posts = Blog::onlyTrashed()->findOrFail($id);
+        $posts->restore();
+
+        return redirect()->back();
     }
 }

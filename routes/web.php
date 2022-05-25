@@ -51,6 +51,8 @@ Route::get('/register', [RegisterController::class, 'register'])->middleware('gu
 Route::post('/register', [RegisterController::class, 'store']);
 
 Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware('auth')->name('blog');
+Route::get('/dashboard/artikel/nonaktif', [DashboardController::class, 'trash'])->name('blog.trash');	
+Route::get('/dashboard/artikel/aktifkan/{id}', [DashboardController::class, 'restore'])->name('blog.restore');
 Route::get('/dashboard/tambah', [DashboardController::class, 'create'])->middleware('auth')->name('tambah-blog');
 Route::post('/dashboard/tambah', [DashboardController::class, 'store'])->middleware('auth')->name('post-blog');
 Route::get('/dashboard/ubah/{id}', [DashboardController::class, 'edit'])->middleware('auth')->name('edit-blog');

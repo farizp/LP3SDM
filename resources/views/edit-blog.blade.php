@@ -4,7 +4,7 @@
     <div class="row justify-content-center">
         <div class="col-lg-5 mt-5 mb-5">
             <main class="form-register">
-                <h1 class="h3 f2-normal text-center">Ubah Blog</h1>
+                <h1 class="h3 f2-normal text-center">Ubah Artikel</h1>
                 <div class="text-center">
                     <i class="bi bi-card-text" style="font-size:150px"></i>
                 </div>

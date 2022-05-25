@@ -19,6 +19,7 @@ class CreateBlogsTable extends Migration
             $table->string('keterangan');
             $table->string('foto');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
