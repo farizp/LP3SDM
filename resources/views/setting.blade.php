@@ -24,7 +24,7 @@
                         @endif
                     </div>
                     <div class="col-md-8 d-flex align-setting[0]s-center">
-                        <div class="button-setting" style="margin-left: 30px;">
+                        <div class="button-setting" style="margin-left: 30px;"><br>
                             <h6>{{ $setting[0]->title1 }}</h6>
                             <p>{{ $setting[0]->desc1 }}</p>
                         </div>
@@ -42,7 +42,7 @@
                         @endif
                     </div>
                     <div class="col-md-8 d-flex align-setting[0]s-center">
-                        <div class="button-setting" style="margin-left: 30px;">
+                        <div class="button-setting" style="margin-left: 30px;"><br>
                             <h6>{{ $setting[0]->title2 }}</h6>
                             <p>{{ $setting[0]->desc2 }}</p>
                         </div>
@@ -60,7 +60,7 @@
                         @endif
                     </div>
                     <div class="col-md-8 d-flex align-setting[0]s-center">
-                        <div class="button-setting" style="margin-left: 30px;">
+                        <div class="button-setting" style="margin-left: 30px;"><br>
                             <h6>{{ $setting[0]->title3 }}</h6>
                             <p>{{ $setting[0]->desc3 }}</p>
                         </div>
@@ -70,5 +70,5 @@
                     <a href="{{ route('edit-setting', $setting[0]->id) }}" class="btn btn-warning">Ubah Banner</a>
                 </div>
             </div>
-        </div>
+        </div><br>
     @endsection
