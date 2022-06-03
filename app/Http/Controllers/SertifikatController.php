@@ -16,8 +16,7 @@ class SertifikatController extends Controller
      */
     public function index()
     {
-        $sertifikat = Sertifikat::
-            join('pelatihans', 'sertifikats.pelatihan_id', '=', 'pelatihans.id')
+        $sertifikat = Sertifikat::join('pelatihans', 'sertifikats.pelatihan_id', '=', 'pelatihans.id')
             ->join('post_data', 'sertifikats.peserta_id', '=', 'post_data.id')
             ->get();
 
@@ -42,8 +41,6 @@ class SertifikatController extends Controller
             'pelatihan' => $pelatihan,
             'postData' => $postData
         ]);
-
-
     }
 
     /**
@@ -54,11 +51,11 @@ class SertifikatController extends Controller
      */
     public function store(Request $request)
     {
-       Sertifikat::create([
+        Sertifikat::create([
             'pelatihan_id' => request('pelatihan_id'),
             'peserta_id' => request('peserta_id'),
             'foto_sertifikat' => request('foto_sertifikat')->store('images')
-            ]);
+        ]);
 
         return redirect()->route('data-sertifikat')->with('success', 'Sertifikat Telah Diupload');
     }
@@ -92,7 +89,6 @@ class SertifikatController extends Controller
             'pelatihan' => $pelatihan,
             'postData' => $postData
         ]);
-     
     }
 
     /**
@@ -126,6 +122,27 @@ class SertifikatController extends Controller
         $sertifikat = Sertifikat::findOrFail($id);
         $sertifikat->delete();
 
-        return redirect()->route('data-sertifikat')->with('success', 'Sertifikat Telah Dihapus');
+        return redirect()->route('data-sertifikat')->with('success', 'Sertifikat Telah Dinonaktifkan');
+    }
+
+    public function trash()
+    {
+        $sertifikat = Sertifikat::onlyTrashed()
+            ->join('pelatihans', 'sertifikats.pelatihan_id', '=', 'pelatihans.id')
+            ->join('post_data', 'sertifikats.peserta_id', '=', 'post_data.id')
+            ->get();
+
+        return view('trash-sertifikat', [
+            'title' => 'Trash',
+            'sertifikat' => $sertifikat
+        ]);
+    }
+
+    public function restore($id)
+    {
+        $sertifikat = Sertifikat::onlyTrashed()->findOrFail($id);
+        $sertifikat->restore();
+
+        return redirect()->back()->with('success', 'Sertifikat berhasil diaktifkan!');
     }
 }

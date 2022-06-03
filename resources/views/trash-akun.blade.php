@@ -3,21 +3,13 @@
 @section('container')
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <h1 class="h2">Akun</h1>
+            <h1 class="h2">Selamat Datang, {{ auth()->user()->name }}</h1>
 
         </div>
 
-        @if (session()->has('success'))
-            <div class="alert alert-success" role="alert">
-                {{ session('success') }}
-            </div>
-        @endif
-
         <div align="right">
-            <a href="{{ route('akun.trash') }}" class="btn btn-danger"><span class="" data-feather="power"
-                style="margin-bottom : 2px"></span> Akun Nonaktif</a>
-            <a href="{{ route('tambah-peserta') }}" class="btn btn-success"><span class="" data-feather="plus"
-                    style="margin-bottom : 2px"></span> Tambah Admin</a>
+            <a href="{{ route('data-peserta') }}" class="btn btn-danger"><span class="" data-feather="corner-up-left"
+                    style="margin-bottom : 2px"></span> Back</a>
         </div>
         <br>
         <div class="table-responsive">
@@ -41,11 +33,8 @@
                             <td>{{ $users->level }}</td>
                             <td>{{ $users->email }}</td>
                             <td>
-                                <a href="{{ route('edit-datapeserta', $users->id) }}" class="badge bg-warning"><span
-                                        data-feather="edit"></span></a>
-                              
-                                <a href="{{ route('delete-datapeserta', $users->id) }}" class="badge bg-danger"
-                                    onclick="return confirm('Apakah User Ini Ingin Di Nonaktifkan?')"><span
+                                <a href="{{ route('akun.restore', $users->id) }}" class="badge bg-success"
+                                    onclick="return confirm('Apakah Akun Ingin Di Aktifkan Lagi?')"><span
                                         data-feather="power"></span></a>
                             </td>
                         </tr>
@@ -54,13 +43,12 @@
             </table>
         </div>
     </main>
-    </div>
 @endsection
 
 @push('script')
     <script>
         $(document).ready(function() {
-            $('#dataPeserta').DataTable();
+            $('#dataBlog').DataTable();
         });
     </script>
 @endpush

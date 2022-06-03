@@ -8,10 +8,10 @@
         </div>
 
         <div align="right">
-            <a href="{{ route('blog.trash') }}" class="btn btn-danger"><span class="" data-feather="power"
-                style="margin-bottom : 2px"></span> Artikel Nonaktif</a>
+            {{-- <a href="{{ route('blog.trash') }}" class="btn btn-danger"><span class="" data-feather="power"
+                style="margin-bottom : 2px"></span> Berita Nonaktif</a> --}}
             <a href="{{ route('tambah-blog') }}" class="btn btn-success"><span class="" data-feather="plus"
-                    style="margin-bottom : 2px"></span> Tambah Artikel</a>
+                    style="margin-bottom : 2px"></span> Tambah </a>
         </div>
         <br>
         <div class="table-responsive">
@@ -22,7 +22,6 @@
                         <th scope="col">Judul</th>
                         <th scope="col">Keterangan</th>
                         <th scope="col">Foto</th>
-                        <th scope="col">Status Artikel</th>
                         <th scope="col">Edit</th>
                     </tr>
                 </thead>
@@ -36,16 +35,11 @@
                                 <img src="{{ asset('storage/' . $post->foto) }}" width="128px" alt="" srcset="">
                             </td>
                             <td>
-                                {{-- @if ($post->)
-                                    
-                                @endif --}}
-                            </td>
-                            <td>
                                 <a href="{{ route('edit-blog', $post->id) }}" class="badge bg-warning"><span
                                         data-feather="edit"></span></a>
-                                <a href="{{ route('delete-blog', $post->id) }}" class="badge bg-danger"
+                                {{-- <a href="{{ route('delete-blog', $post->id) }}" class="badge bg-danger"
                                     onclick="return confirm('Apakah Blog Ingin Di Nonaktifkan?')"><span
-                                        data-feather="power"></span></a>
+                                        data-feather="power"></span></a> --}}
                             </td>
                         </tr>
                     @endforeach

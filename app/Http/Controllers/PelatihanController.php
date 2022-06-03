@@ -116,9 +116,27 @@ class PelatihanController extends Controller
     public function destroy($id)
     {
         $post = Pelatihan::findOrFail($id);
-
         $post->delete();
 
-        return redirect()->route('jadwal')->with('success', 'Pos Berhasil Diupdate');
+        return redirect()->route('jadwal')->with('success', 'Jadwal Berhasil Dinonaktifkan');
     }
+
+    public function trash(){
+
+        $posts = Pelatihan::onlyTrashed()->get();
+
+        return view('trash-jadwal', [
+            'title' => 'Trash',
+            'posts' => $posts
+        ]);	
+    }
+
+    public function restore($id){
+
+        $post = Pelatihan::onlyTrashed()->findOrFail($id);
+        $post->restore();
+
+        return redirect()->back()->with('success', 'Jadwal berhasil diaktifkan!');
+    }
+
 }

@@ -20,6 +20,7 @@ class CreatePelatihansTable extends Migration
             $table->string('tempat');
             $table->date('tanggal');
             $table->string('hari');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

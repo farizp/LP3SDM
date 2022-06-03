@@ -94,7 +94,7 @@
 
 
         <hr class="featurette-divider">
-        <h3 align="center">Artikel Pelatihan</h3>
+        <h3 align="center">Berita Pelatihan</h3>
 
         <div class="row row-cols-1 row-cols-md-3 g-4 mt-4">
             @foreach ($blog as $item)

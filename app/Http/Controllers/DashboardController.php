@@ -88,7 +88,7 @@ class DashboardController extends Controller
 
         $posts = Blog::onlyTrashed()->get();
 
-        return view('trash', [
+        return view('trash-blog', [
             'title' => 'Trash',
             'posts' => $posts
         ]);	

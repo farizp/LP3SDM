@@ -30,7 +30,8 @@ class PostDataController extends Controller
         $this->middleware('auth');
     }
 
-    public function registration(){
+    public function registration()
+    {
 
         $pelatihan = Pelatihan::all();
 
@@ -81,28 +82,28 @@ class PostDataController extends Controller
             Alert::success('Success', 'Data Berhasil Diinput');
             $postData = new PostData();
 
-            $postData -> pelatihan_id = $request -> pelatihan_id;
-            $postData -> nama = $request -> nama;
-            $postData -> nip = $request -> nip;
-            $postData -> telp = $request -> telp;
-            $postData -> golongan = $request -> golongan;
-            $postData -> nama_sekolah = $request -> nama_sekolah;
-            $postData -> alamat_sekolah = $request -> nama_sekolah;
-            $postData -> kelas = $request -> kelas;
-            $postData -> kurikulum = $request -> kurikulum;
-            $postData -> mapel = $request -> mapel;
-            $postData -> nama_kepsek = $request -> nama_kepsek;
-            $postData -> nip_kepsek = $request -> nip_kepsek;
-            $postData -> pkb = $request -> pkb;
-            $postData -> nip_pkb = $request -> nip_pkb;
-            $postData -> pendidikan = $request -> pendidikan;
+            $postData->pelatihan_id = $request->pelatihan_id;
+            $postData->nama = $request->nama;
+            $postData->nip = $request->nip;
+            $postData->telp = $request->telp;
+            $postData->golongan = $request->golongan;
+            $postData->nama_sekolah = $request->nama_sekolah;
+            $postData->alamat_sekolah = $request->nama_sekolah;
+            $postData->kelas = $request->kelas;
+            $postData->kurikulum = $request->kurikulum;
+            $postData->mapel = $request->mapel;
+            $postData->nama_kepsek = $request->nama_kepsek;
+            $postData->nip_kepsek = $request->nip_kepsek;
+            $postData->pkb = $request->pkb;
+            $postData->nip_pkb = $request->nip_pkb;
+            $postData->pendidikan = $request->pendidikan;
 
             // dd($postData);
-            $postData -> save();
+            $postData->save();
             return redirect()->back();
         }
         // dd($request->all());
-        
+
     }
 
     /**
@@ -152,6 +153,28 @@ class PostDataController extends Controller
         $post = PostData::findOrFail($id);
         $post->delete();
 
-        return redirect::back()->with('success', 'Data Berhasil Dihapus');
+        return redirect()->back()->with('success', 'Peserta Penelitian Berhasil Dinonaktifkan');
+    }
+
+    public function trash()
+    {
+
+        $posts = PostData::onlyTrashed()
+            ->join('pelatihans', 'post_data.pelatihan_id', '=', 'pelatihans.id')
+            ->get();
+
+        return view('trash-peserta-penelitan', [
+            'title' => 'Trash',
+            'posts' => $posts
+        ]);
+    }
+
+    public function restore($id)
+    {
+
+        $post = PostData::onlyTrashed()->findOrFail($id);
+        $post->restore();
+
+        return redirect()->back()->with('success', 'Jadwal berhasil diaktifkan!');
     }
 }

@@ -3,7 +3,8 @@
 @section('container')
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <h1 class="h2">Sertifikat</h1>
+            <h1 class="h2">Selamat Datang, {{ auth()->user()->name }}</h1>
+
         </div>
 
         @if (session()->has('success'))
@@ -13,10 +14,8 @@
         @endif
 
         <div align="right">
-            <a href="{{ route('sertifikat.trash') }}" class="btn btn-danger"><span class="" data-feather="power"
-                style="margin-bottom : 2px"></span> Sertifikat Nonaktif</a>
-            <a href="{{ route('tambah-sertifikat') }}" class="btn btn-success"><span class=""
-                    data-feather="plus" style="margin-bottom : 2px"></span> Unggah Sertifikat</a>
+            <a href="{{ route('data-sertifikat') }}" class="btn btn-danger"><span class=""
+                    data-feather="corner-up-left" style="margin-bottom : 2px"></span> Back</a>
         </div>
         <br>
         <div class="table-responsive">
@@ -42,11 +41,8 @@
                                 <img src="{{ asset('storage/' . $post->foto_sertifikat) }}" alt="" height="128">
                             </td>
                             <td>
-                                <a href="{{ route('edit-sertifikat', $post->id) }}" class="btn btn-warning"><span
-                                        class="" data-feather="edit" style="margin-bottom : 2px"></span>
-                                </a>
-                                <a href="{{ route('delete-sertifikat', $post->id) }}" class="badge bg-danger"
-                                    onclick="return confirm('Apakah Serifikat Ini Ingin Di Nonaktifkan?')"><span
+                                <a href="{{ route('sertifikat.restore', $post->id) }}" class="badge bg-success"
+                                    onclick="return confirm('Apakah Sertifikat Ingin Di Aktifkan Lagi?')"><span
                                         data-feather="power"></span></a>
                             </td>
                         </tr>
@@ -60,7 +56,7 @@
 @push('script')
     <script>
         $(document).ready(function() {
-            $('#dataSertifikat').DataTable();
+            $('#dataBlog').DataTable();
         });
     </script>
 @endpush

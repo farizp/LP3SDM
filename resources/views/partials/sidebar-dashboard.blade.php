@@ -24,7 +24,7 @@
                     <a class="nav-link {{ Request::is('dashboard') ? 'active' : '' }} " aria-current="page"
                         href="/dashboard">
                         <span data-feather="monitor"></span>
-                        Artikel
+                        Berita
                     </a>
                 </li>
                 <li class="nav-item">

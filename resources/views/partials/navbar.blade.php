@@ -15,8 +15,8 @@
                     <a class="nav-link {{ $title === 'Tentang' ? 'active' : '' }}" href="/about">Tentang</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ $title === 'Artikel' ? 'active' : '' }}"
-                        href="{{ route('blog-home') }}">Artikel</a>
+                    <a class="nav-link {{ $title === 'Berita' ? 'active' : '' }}"
+                        href="{{ route('blog-home') }}">Berita</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {{ $title === 'Pendaftaran' ? 'active' : '' }}"
@@ -40,7 +40,7 @@
                             @else
                                 <li>
                                     <a href="{{ route('profile', auth()->user()->id) }}" class="nav-link text-dark">
-                                        &nbsp; <i class="bi bi-person"></i> Profile</a>
+                                        &nbsp; <i class="bi bi-person"></i> Sertifikat</a>
                                 </li>
                             @endif
                             <li>

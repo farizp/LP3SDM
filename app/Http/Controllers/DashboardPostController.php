@@ -128,6 +128,25 @@ class DashboardPostController extends Controller
     {
         $user = User::findOrFail($id);
         $user->delete();
-        return redirect('/data-peserta')->with('success', 'Data Telah Dihapus!');
+
+        return redirect('/data-peserta')->with('success', 'Data Telah Dinonaktifkan!');
+    }
+
+    public function trash(){
+
+        $user = User::onlyTrashed()->get();
+
+        return view('trash-akun', [
+            'title' => 'Trash',
+            'user' => $user
+        ]);	
+    }
+
+    public function restore($id){
+
+        $user = User::onlyTrashed()->findOrFail($id);
+        $user->restore();
+
+        return redirect()->back();
     }
 }

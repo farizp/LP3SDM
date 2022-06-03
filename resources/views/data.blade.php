@@ -21,6 +21,11 @@
           {{ session('success') }}
         </div>
     @endif
+    <div align="right">
+      <a href="{{ route('peserta-pelatihan.trash') }}" class="btn btn-danger"><span class="" data-feather="power"
+          style="margin-bottom : 2px"></span> Sertifikat Nonaktif</a>
+  </div>
+  <br>
 
     <div class="table-responsive">
       <table class="table table-striped table-sm" width="100%" cellspacing="0" id="dataPeserta">
@@ -42,6 +47,7 @@
             <th scope="col">NIP Koordinator PKB</th>
             <th scope="col">Kualifikasi Pendidikan</th>
             <th scope="col">Nama Pelatihan</th>
+            <th scope="col">Aksi</th>
         </tr>
         </thead>
         <tbody>
@@ -63,6 +69,11 @@
               <td>{{ $postData -> nip_pkb }}</td>
               <td>{{ $postData -> pendidikan }}</td>
               <td>{{ $postData -> nama_pelatihan }}</td>
+              <td>
+                <a href="{{ route('peserta.delete', $postData->id) }}" class="badge bg-danger"
+                  onclick="return confirm('Apakah Peserta Ini Ingin Di Nonaktifkan?')"><span
+                      data-feather="power"></span></a>
+              </td>
             </tr>
             @endforeach
         </tbody>

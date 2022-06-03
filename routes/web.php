@@ -41,7 +41,12 @@ Route::get('/about', function () {
 Route::get('/registration', [PostDataController::class, 'registration']);
 Route::post('/registration', [PostDataController::class, 'store']) -> name('registration.store');
 Route::get('/delete/peserta/{id}', [PostDataController::class, 'destroy']) -> name('peserta.delete');
+// Route::get('/dashboard/hapus/{id}', [PostDataController::class, 'destroy'])->name('delete-peserta-pelatihan');
+Route::get('/dashboard/peserta/nonaktif', [PostDataController::class, 'trash'])->name('peserta-pelatihan.trash');	
+Route::get('/dashboard/peserta/aktifkan/{id}', [PostDataController::class, 'restore'])->name('peserta-pelatihan.restore');
 
+Route::get('/dashboard/akun/nonaktif', [DashboardPostController::class, 'trash'])->name('akun.trash');	
+Route::get('/dashboard/akun/aktifkan/{id}', [DashboardPostController::class, 'restore'])->name('akun.restore');
 Route::get('/login', [LoginController::class, 'login'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/', [LoginController::class, 'logout']);
@@ -51,15 +56,15 @@ Route::get('/register', [RegisterController::class, 'register'])->middleware('gu
 Route::post('/register', [RegisterController::class, 'store']);
 
 Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware('auth')->name('blog');
-Route::get('/dashboard/artikel/nonaktif', [DashboardController::class, 'trash'])->name('blog.trash');	
-Route::get('/dashboard/artikel/aktifkan/{id}', [DashboardController::class, 'restore'])->name('blog.restore');
+Route::get('/dashboard/berita/nonaktif', [DashboardController::class, 'trash'])->name('blog.trash');	
+Route::get('/dashboard/berita/aktifkan/{id}', [DashboardController::class, 'restore'])->name('blog.restore');
 Route::get('/dashboard/tambah', [DashboardController::class, 'create'])->middleware('auth')->name('tambah-blog');
 Route::post('/dashboard/tambah', [DashboardController::class, 'store'])->middleware('auth')->name('post-blog');
 Route::get('/dashboard/ubah/{id}', [DashboardController::class, 'edit'])->middleware('auth')->name('edit-blog');
 Route::patch('/dashboard/ubah/{id}', [DashboardController::class, 'update'])->middleware('auth')->name('update-blog');
 Route::get('/dashboard/hapus/{id}', [DashboardController::class, 'destroy'])->middleware('auth')->name('delete-blog');
-Route::get('/blog', [DashboardController::class, 'blog'])->name('blog-home');
-Route::get('/blog/show/{id}', [DashboardController::class, 'show'])->name('show-blog');
+Route::get('/berita', [DashboardController::class, 'blog'])->name('blog-home');
+Route::get('/berita/show/{id}', [DashboardController::class, 'show'])->name('show-blog');
 
 Route::resource('/data', DashboardPostController::class)->middleware('auth');
 
@@ -76,14 +81,18 @@ Route::post('/data-sertifikat/tambah', [SertifikatController::class, 'store'])->
 Route::get('/data-sertifikat/ubah/{id}', [SertifikatController::class, 'edit'])->middleware('auth')->name('edit-sertifikat');
 Route::patch('/data-sertifikat/ubah{id}', [SertifikatController::class, 'update'])->middleware('auth')->name('update-sertifikat');
 Route::get('/data-sertifikat/hapus/{id}', [SertifikatController::class, 'destroy'])->middleware('auth')->name('delete-sertifikat');
-
+Route::get('/dashboard/sertifikat/nonaktif', [SertifikatController::class, 'trash'])->name('sertifikat.trash');	
+Route::get('/dashboard/sertifikat/aktifkan/{id}', [SertifikatController::class, 'restore'])->name('sertifikat.restore');
 
 Route::get('/jadwal', [PelatihanController::class, 'index'])->middleware('auth')->name('jadwal');
 Route::get('/jadwal/tambah', [PelatihanController::class, 'create'])->middleware('auth')->name('tambah-jadwal');
 Route::post('/jadwal/tambah', [PelatihanController::class, 'store'])->middleware('auth')->name('post-jadwal');
 Route::get('/jadwal/ubah/{id}', [PelatihanController::class, 'edit'])->middleware('auth')->name('edit-jadwal');
 Route::patch('/jadwal/ubah{id}', [PelatihanController::class, 'update'])->middleware('auth')->name('update-jadwal');
-Route::delete('/jadwal/hapus/{id}', [PelatihanController::class, 'destroy'])->middleware('auth')->name('delete-jadwal');
+Route::get('/jadwal/hapus/{id}', [PelatihanController::class, 'destroy'])->middleware('auth')->name('delete-jadwal');
+Route::get('/dashboard/jadwal/nonaktif', [PelatihanController::class, 'trash'])->name('jadwal.trash');	
+Route::get('/dashboard/jadwal/aktifkan/{id}', [PelatihanController::class, 'restore'])->name('jadwal.restore');
+
 
 Route::get('/setting', [SettingController::class, 'index'])->name('setting');
 Route::get('/edit-setting/{id}', [SettingController::class, 'edit'])->name('edit-setting');

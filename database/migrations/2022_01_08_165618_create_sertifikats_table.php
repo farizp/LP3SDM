@@ -18,6 +18,7 @@ class CreateSertifikatsTable extends Migration
             $table->integer('pelatihan_id');
             $table->integer('peserta_id');
             $table->string('foto_sertifikat');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -30,6 +30,7 @@ class CreatePostDataTable extends Migration
             $table->string('pkb');
             $table->char('nip_pkb', 20);
             $table->string('pendidikan');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

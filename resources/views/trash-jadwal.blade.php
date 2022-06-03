@@ -3,7 +3,8 @@
 @section('container')
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <h1 class="h2">Jadwal Pelatihan</h1>
+            <h1 class="h2">Selamat Datang, {{ auth()->user()->name }}</h1>
+
         </div>
 
         @if (session()->has('success'))
@@ -13,10 +14,8 @@
         @endif
 
         <div align="right">
-            <a href="{{ route('jadwal.trash') }}" class="btn btn-danger"><span class="" data-feather="power"
-                style="margin-bottom : 2px"></span> Jadwal Nonaktif</a>
-            <a href="{{ route('tambah-jadwal') }}" class="btn btn-success"><span class="" data-feather="plus"
-                    style="margin-bottom : 2px"></span> Buat Jadwal</a>
+            <a href="{{ route('jadwal') }}" class="btn btn-danger"><span class=""
+                    data-feather="corner-up-left" style="margin-bottom : 2px"></span> Back</a>
         </div>
         <br>
         <div class="table-responsive">
@@ -42,10 +41,8 @@
                             <td>{{ $post->tanggal }}</td>
                             <td>{{ $post->hari }}</td>
                             <td>
-                                <a href="{{ route('edit-jadwal', $post->id) }}" class="badge bg-warning"><span
-                                        data-feather="edit"></span></a>
-                                <a href="{{ route('delete-jadwal', $post->id) }}" class="badge bg-danger"
-                                    onclick="return confirm('Apakah Jadwal Ini Ingin Di Nonaktifkan?')"><span
+                                <a href="{{ route('jadwal.restore', $post->id) }}" class="badge bg-success"
+                                    onclick="return confirm('Apakah Jadwal Ingin Di Aktifkan Lagi?')"><span
                                         data-feather="power"></span></a>
                             </td>
                         </tr>
@@ -59,7 +56,7 @@
 @push('script')
     <script>
         $(document).ready(function() {
-            $('#dataJadwal').DataTable();
+            $('#dataBlog').DataTable();
         });
     </script>
 @endpush
