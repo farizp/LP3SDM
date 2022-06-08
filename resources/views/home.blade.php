@@ -106,6 +106,8 @@
                             <p class="card-text">
                                 {!! Str::limit($item->keterangan, 200) !!}
                             </p>
+                            
+                            <a href="{{ route('show-blog', $item->id) }}" class="btn btn-primary">Lanjut Baca</a>
                         </div>
                         <div class="card-footer">
                             <small class="text-muted">{{ $item->created_at->diffForHumans() }}</small>

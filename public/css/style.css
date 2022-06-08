@@ -148,3 +148,9 @@ body {
     border-radius : 0;
     margin-bottom: -1px;
   }
+
+  .card-list-berita {
+    margin-top: 100px;
+    border: none;
+    border-radius: 10px;
+  }

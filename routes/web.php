@@ -10,6 +10,7 @@ use App\Http\Controllers\SertifikatController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SettingController;
 use App\Models\Pelatihan;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
@@ -93,10 +94,14 @@ Route::get('/jadwal/hapus/{id}', [PelatihanController::class, 'destroy'])->middl
 Route::get('/dashboard/jadwal/nonaktif', [PelatihanController::class, 'trash'])->name('jadwal.trash');	
 Route::get('/dashboard/jadwal/aktifkan/{id}', [PelatihanController::class, 'restore'])->name('jadwal.restore');
 
-
 Route::get('/setting', [SettingController::class, 'index'])->name('setting');
 Route::get('/edit-setting/{id}', [SettingController::class, 'edit'])->name('edit-setting');
 Route::patch('/edit-setting/{id}', [SettingController::class, 'update'])->name('update-setting');
 
 Route::get('/pelatihan/{id}', [PelatihanController::class, 'show'])->name('pelatihan');
 Route::get('/data-pelatihan', [PelatihanController::class, 'getData']);
+
+
+Route::get('/symlink', function ($routes) {
+    Artisan::call('storage:link');
+});
