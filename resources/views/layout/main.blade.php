@@ -27,5 +27,14 @@
       <script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
       @include('sweetalert::alert')
       @stack('script')
+
+      <script>
+        $(document).ready(function($) {
+    
+            $('.hr_line').append('<hr class="break-sec-w">');
+    
+        });
+    </script>
+    
   </body>
 </html>

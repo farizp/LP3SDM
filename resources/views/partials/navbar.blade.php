@@ -26,6 +26,9 @@
 
             <ul class="navbar-nav ms-auto">
                 @auth
+                    <li>
+                        <div class="hr_line"></div>
+                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">

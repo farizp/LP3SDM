@@ -4,7 +4,7 @@
     <div class="row justify-content-center">
         <div class="col-lg-5 mt-5 mb-5">
             <main class="form-register">
-                <h1 class="h3 f2-normal text-center">Tambah Jadwal</h1>
+                <h1 class="h3 f2-normal text-center">Tambah Pelatihan</h1>
                 <div class="text-center">
                     <i class="bi bi-calendar-check" style="font-size:150px"></i>
                 </div>

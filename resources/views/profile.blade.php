@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <title>LP3SDM | Sertifikat</title>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <div class="container">
+        <div class="container-fluid">
             <a class="navbar-brand" href="/">LP3SDM</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -193,6 +193,13 @@
         <script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
         @include('sweetalert::alert')
         @stack('script')
+        <script>
+            $(document).ready(function($) {
+        
+                $('.hr_line').append('<hr class="break-sec-w">');
+        
+            });
+        </script>
 </body>
 
 </html>

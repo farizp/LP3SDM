@@ -13,7 +13,7 @@
 
 <body>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <div class="container">
+        <div class="container-fluid">
             <a class="navbar-brand" href="/">LP3SDM</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -129,6 +129,13 @@
     <script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
     @include('sweetalert::alert')
     @stack('script')
+    <script>
+        $(document).ready(function($) {
+    
+            $('.hr_line').append('<hr class="break-sec-w">');
+    
+        });
+    </script>
 </body>
 
 </html>

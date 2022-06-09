@@ -9,12 +9,12 @@
             <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
 
-        <div class="carousel-inner" style="height: 550px">
+        <div class="carousel-inner">
             <div class="carousel-item active">
                 @if (!empty($setting[0]->image1))
-                    <img src="{{ asset('storage/' . $setting[0]->image1) }}" alt="" height="100%">
+                    <img src="{{ asset('storage/' . $setting[0]->image1) }}" alt="" class="img-fluid">
                 @else
-                    <img src="img/seminarKTI.jpg" class="bd-placeholder-img" width="100%" height="100%"
+                    <img src="img/seminarKTI.jpg" class="bd-placeholder-img"
                         xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice"
                         focusable="false">
                 @endif
@@ -35,9 +35,9 @@
 
             <div class="carousel-item">
                 @if (!empty($setting[0]->image2))
-                    <img src="{{ asset('storage/' . $setting[0]->image2) }}" alt="" height="100%">
+                    <img src="{{ asset('storage/' . $setting[0]->image2) }}" alt="" class="img-fluid">
                 @else
-                    <img src="img/seminarKTI.jpg" class="bd-placeholder-img" width="100%" height="100%"
+                    <img src="img/seminarKTI.jpg" class="bd-placeholder-img"
                         xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice"
                         focusable="false">
                 @endif
@@ -58,9 +58,9 @@
 
             <div class="carousel-item">
                 @if (!empty($setting[0]->image3))
-                    <img src="{{ asset('storage/' . $setting[0]->image3) }}" alt="" height="100%">
+                    <img src="{{ asset('storage/' . $setting[0]->image3) }}" alt="" class="img-fluid">
                 @else
-                    <img src="img/seminarKTI.jpg" class="bd-placeholder-img" width="100%" height="100%"
+                    <img src="img/seminarKTI.jpg" class="bd-placeholder-img"
                         xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice"
                         focusable="false">
                 @endif
@@ -106,7 +106,7 @@
                             <p class="card-text">
                                 {!! Str::limit($item->keterangan, 200) !!}
                             </p>
-                            
+
                             <a href="{{ route('show-blog', $item->id) }}" class="btn btn-primary">Lanjut Baca</a>
                         </div>
                         <div class="card-footer">

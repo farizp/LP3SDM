@@ -44,7 +44,7 @@
                     <a class="nav-link {{ Request::is('jadwal') ? 'active' : '' }} " aria-current="page"
                         href="/jadwal">
                         <span data-feather="calendar"></span>
-                        Jadwal Pelatihan
+                        Pelatihan
                     </a>
                 </li>
 

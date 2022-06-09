@@ -3,7 +3,7 @@
 @section('container')
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <h1 class="h2">Jadwal Pelatihan</h1>
+            <h1 class="h2">Pelatihan</h1>
         </div>
 
         @if (session()->has('success'))
@@ -14,9 +14,9 @@
 
         <div align="right">
             <a href="{{ route('jadwal.trash') }}" class="btn btn-danger"><span class="" data-feather="power"
-                style="margin-bottom : 2px"></span> Jadwal Nonaktif</a>
+                style="margin-bottom : 2px"></span> Pelatihan Nonaktif</a>
             <a href="{{ route('tambah-jadwal') }}" class="btn btn-success"><span class="" data-feather="plus"
-                    style="margin-bottom : 2px"></span> Buat Jadwal</a>
+                    style="margin-bottom : 2px"></span> Buat Pelatihan</a>
         </div>
         <br>
         <div class="table-responsive">
