@@ -2,7 +2,6 @@
 
 @section('container')
 
-    <link rel="stylesheet" href="css/registration.css">
 
     <div class="centerbox">
         <div class="row justify-content-center">
@@ -92,72 +91,22 @@
                             @enderror
                         </div>
 
-
-                        <div class="form-floating mb-2">
-                            <h4>Golongan</h4>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="golongan" id="golongan"
-                                            value="I">
-                                        <label class="form-check-label" for="exampleRadios">
-                                            I
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="golongan" id="golongan"
-                                            value="II">
-                                        <label class="form-check-label" for="golongan">
-                                            II
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="golongan" id="golongan"
-                                            value="III">
-                                        <label class="form-check-label" for="golongan">
-                                            III
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="golongan" id="golongan"
-                                            value="IV">
-                                        <label class="form-check-label" for="golongan">
-                                            IV
-                                        </label>
-                                    </div>
+                        <div class="form-floating">
+                            <select class="form-select" @error('golongan') is-invalid @enderror" name="golongan"
+                                id="golongan" aria-label="Pilih Golongan" required value="{{ old('golongan') }}">
+                                <option value=>Golongan</option>
+                                <option value="I-A">I-A</option>
+                                <option value="II-B">II-B</option>
+                                <option value="III-C">III-C</option>
+                                <option value="IV-D">IV-D</option>
+                            </select>
+                            <label for="golongan">Pilih</label>
+                            @error('golongan')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
-                                            value="option1" checked>
-                                        <label class="form-check-label" for="exampleRadios1">
-                                            I
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
-                                            value="option1" checked>
-                                        <label class="form-check-label" for="exampleRadios1">
-                                            II
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
-                                            value="option1" checked>
-                                        <label class="form-check-label" for="exampleRadios1">
-                                            III
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
-                                            value="option1" checked>
-                                        <label class="form-check-label" for="exampleRadios1">
-                                            IV
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                            @enderror
+                        </div><br>
 
                         <div class="form-floating">
                             <input type="text" class="form-control  @error('nama_sekolah') is-invalid @enderror"
@@ -220,16 +169,37 @@
                         <hr>
 
                         <div class="form-floating">
-                            <select class="form-select" @error('pendidikan') is-invalid @enderror" name="pendidikan"
-                                id="pendidikan" aria-label="Pilih Pendidikan" required value="{{ old('pendidikan') }}">
-                                <option value=>Kualifikasi Pendidikan</option>
-                                <option value="SMA">SMA</option>
-                                <option value="D2">D2</option>
-                                <option value="S1">S1</option>
-                                <option value="S2">S2</option>
-                                <option value="S3">S3</option>
-                            </select>
-                            <label for="pendidikan">Pilih</label>
+                            <h4>Kualifikasi Pendidikan</h4>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="pendidikan" id="pendidikan" value="SMA">
+                                <label class="form-check-label" for="pendidikan">
+                                    SMA
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="pendidikan" id="pendidikan" value="D2">
+                                <label class="form-check-label" for="pendidikan">
+                                    D2
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="pendidikan" id="pendidikan" value="S1">
+                                <label class="form-check-label" for="pendidikan">
+                                    S1
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="pendidikan" id="pendidikan" value="S2">
+                                <label class="form-check-label" for="pendidikan">
+                                    S2
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="pendidikan" id="pendidikan" value="S3">
+                                <label class="form-check-label" for="pendidikan">
+                                    S3
+                                </label>
+                            </div>
                             @error('pendidikan')
                                 <div class="invalid-feedback">
                                     {{ $message }}
