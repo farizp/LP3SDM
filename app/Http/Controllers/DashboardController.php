@@ -5,12 +5,37 @@ namespace App\Http\Controllers;
 use App\Models\Blog;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
-
+use App\Models\Pelatihan;
+use App\Models\User; 
+use App\Models\PostData;
+use App\Models\Sertifikat;
 class DashboardController extends Controller
 {
-    public function dashboard(){
+    public function index(){
+        $pelatihan = Pelatihan::all();
+        $countPelatihan = count($pelatihan);
+
+        $user = User::all();
+        $countUser = count($user);
+
+        $peserta = PostData::all();
+        $countPeserta = count($peserta);
+
+        $sertifikat = Sertifikat::all();
+        $countSertifikat = count($sertifikat);
+
         return view('dashboard', [
-            "title" => "Blog",
+            "title" => "Dashboard Admin",
+            "pelatihan" => $countPelatihan,
+            "user" => $countUser,
+            "peserta" => $countPeserta,
+            "sertifikat" => $countSertifikat
+        ]);
+    }
+
+    public function dashboard(){
+        return view('data-blog', [
+            "title" => "Berita",
             "posts" => Blog::all()
         ]);
     }

@@ -1,16 +1,48 @@
 @extends('layout/main')
 
 @section('container')
-    <div>
-        <h2 class="text-center">
-            Tentang<br>Lembaga Penelitian dan Evaluasi Indonesia
-        </h2><br>
+    <div class="container">
+        <div class="text-center" style="color: black">
+            <h2>
+                Tentang<br>Lembaga Pendidikan, Penelitian, dan Pengembangan Sumber Daya Manusia
+            </h2><br><br>
+            
+            <h5>
+                Sejarah Singkat
+            </h5>
 
-        <p class="text-center">
-            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste voluptatem cum ullam nostrum provident suscipit modi ea eos quas quod enim ut, a aliquid, repellendus quo at, dolorem ex quam in explicabo sunt est. Dolorum, dolores aliquid porro non officiis itaque sed eligendi neque? Quia nisi quos odio dolores fugit. Blanditiis vitae fugit corrupti itaque autem, eius libero molestias, vel eum cumque nesciunt consequuntur quasi et nam explicabo repudiandae sed odit dolores tenetur, cupiditate aliquam ad ipsum aperiam fugiat. Odit repellendus, quae, sint ducimus quos tempore dicta ab, voluptatum asperiores consequatur possimus et consequuntur porro doloribus natus sunt temporibus atque!"
-        </p>
+            <h6>
+                Lembaga Pendidikan, Penelitian, dan Pengembangan Sumber Daya Manusia (LP3SDM)  yang berdiri pada tanggal 9 September 2009, yang diketuai sekaligus didirikan oleh Dr.Khaerul Budhy Nagara, M.SI.
+                <br>
+                LP3SDM beralamat di Jl. Politeknik Komp Griya Mitra 2 BA 05 Bukit Lama, Palembang, Sumatera Selatan.
+                <br>
+                LP3SDM memiliki ruang administrasi, ruang diklat, ruang konsultasi, perpustakaan, serta halaman parkir untuk
+                para karyawan.
+            </h6><br>
+
+            <h5>
+                Visi
+            </h5>
+            <h6>
+                Meningkatkan Kualitas Sumber Daya Manusia diberbagai bidang dalam melakukan penelitian.
+            </h6><br>
+
+            <h5>   
+                Misi
+            </h5>
+            <h6>
+                1. Melakukan kerjasama kepada pemerintah dan non-pemerintah dalam bidang penelitian dan Evaluasi <br>
+                2. Melaksanakan kegiatan pelatihan, bimbingan, dan praktek 2 bidang penelitian dan evalusi <br>
+                3. Melakukan kajian 2 ilmiah terkait penelitian dan evaluasi <br>
+                4. Me-review dan melaksanakan Publikasi Ilmiah melalui jurnal ilmiah
+            </h6><br>
+            <h5>
+                Struktur Organisasi
+            </h5>
+
+        </div>
     </div>
-
+    
     {{-- @foreach ($about as $about)
         <h2 class="text-center mb-3">
             {{ $about["title"] }}
@@ -18,6 +50,5 @@
         <h5 class="text-justify">
             {{ $about["body"] }}
         </h5>
-    @endforeach
-     --}}
+    @endforeach --}}
 @endsection

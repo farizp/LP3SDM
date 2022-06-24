@@ -56,7 +56,8 @@ Route::get('/profile/{id}', [LoginController::class, 'profile'])->name('profile'
 Route::get('/register', [RegisterController::class, 'register'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
 
-Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware('auth')->name('blog');
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth')->name('dashboard');
+Route::get('/dashboard/data-berita', [DashboardController::class, 'dashboard'])->middleware('auth')->name('blog');
 Route::get('/dashboard/berita/nonaktif', [DashboardController::class, 'trash'])->name('blog.trash');	
 Route::get('/dashboard/berita/aktifkan/{id}', [DashboardController::class, 'restore'])->name('blog.restore');
 Route::get('/dashboard/tambah', [DashboardController::class, 'create'])->middleware('auth')->name('tambah-blog');

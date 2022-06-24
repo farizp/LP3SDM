@@ -21,8 +21,8 @@
 
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link {{ Request::is('dashboard') ? 'active' : '' }} " aria-current="page"
-                        href="/dashboard">
+                    <a class="nav-link {{ Request::is('blog') ? 'active' : '' }} " aria-current="page"
+                        href="/dashboard/data-berita">
                         <span data-feather="monitor"></span>
                         Berita
                     </a>

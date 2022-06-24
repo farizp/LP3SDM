@@ -7,44 +7,67 @@
 
         </div>
 
-        <div align="right">
-            {{-- <a href="{{ route('blog.trash') }}" class="btn btn-danger"><span class="" data-feather="power"
-                style="margin-bottom : 2px"></span> Berita Nonaktif</a> --}}
-            <a href="{{ route('tambah-blog') }}" class="btn btn-success"><span class="" data-feather="plus"
-                    style="margin-bottom : 2px"></span> Tambah </a>
-        </div>
-        <br>
-        <div class="table-responsive">
-            <table class="table table-striped table-sm" width="100%" cellspacing="0" id="dataBlog">
-                <thead>
-                    <tr>
-                        <th scope="col">No</th>
-                        <th scope="col">Judul</th>
-                        <th scope="col">Keterangan</th>
-                        <th scope="col">Foto</th>
-                        <th scope="col">Edit</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($posts as $post)
-                        <tr>
-                            <td>{{ $loop->iteration }}</td>
-                            <td>{{ $post->judul }}</td>
-                            <td>{!! $post->keterangan !!}</td>
-                            <td>
-                                <img src="{{ asset('storage/' . $post->foto) }}" width="128px" alt="" srcset="">
-                            </td>
-                            <td>
-                                <a href="{{ route('edit-blog', $post->id) }}" class="badge bg-warning"><span
-                                        data-feather="edit"></span></a>
-                                {{-- <a href="{{ route('delete-blog', $post->id) }}" class="badge bg-danger"
-                                    onclick="return confirm('Apakah Blog Ingin Di Nonaktifkan?')"><span
-                                        data-feather="power"></span></a> --}}
-                            </td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card shadow rounded" style="border: none;">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4>Pelatihan</h4>
+                                <span>{{ $pelatihan }}</span>
+                            </div>
+                            <div class="col-md-6">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Feather-core-calendar.svg/1024px-Feather-core-calendar.svg.png" img="img-fluid" style="width: 100px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card shadow rounded" style="border: none;">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4>Akun</h4>
+                                <span>{{ $user }}</span>
+                            </div>
+                            <div class="col-md-6">
+                                <img src="https://cdn-icons-png.flaticon.com/512/33/33308.png" img="img-fluid" style="width: 100px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card shadow rounded" style="border: none;">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4>Peserta</h4>
+                                <span>{{ $peserta }}</span>
+                            </div>
+                            <div class="col-md-6">
+                                <img src="https://cdn-icons-png.flaticon.com/512/33/33887.png" img="img-fluid" style="width: 100px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card shadow rounded" style="border: none;">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4>Sertifikat</h4>
+                                <span>{{ $sertifikat }}</span>
+                            </div>
+                            <div class="col-md-6">
+                                <img src="https://www.freeiconspng.com/thumbs/certificate-icon-png/certificate-icon-10.png" img="img-fluid" style="width: 100px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 @endsection
