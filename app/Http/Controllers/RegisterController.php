@@ -19,7 +19,7 @@ class RegisterController extends Controller
             'nip' => 'required|min:10|max:15|unique:users',
             'level' => 'required',
             'email' => 'required|email:dns|unique:users',
-            'password' => 'required|min:5|max:255'
+            'password' => 'required|min:6|max:255'
         ]);
 
         $validatedData['password'] = bcrypt($validatedData['password']);
